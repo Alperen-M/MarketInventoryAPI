@@ -1,0 +1,17 @@
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\bin\Debug\net9.0\MarketInventory.Infrastructure.deps.json
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\bin\Debug\net9.0\MarketInventory.Infrastructure.runtimeconfig.json
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\bin\Debug\net9.0\MarketInventory.Infrastructure.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\bin\Debug\net9.0\MarketInventory.Infrastructure.pdb
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\bin\Debug\net9.0\MarketInventory.Domain.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\bin\Debug\net9.0\MarketInventory.Domain.pdb
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\obj\Debug\net9.0\MarketInventory.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\obj\Debug\net9.0\MarketInventory.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\obj\Debug\net9.0\MarketInventory.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\obj\Debug\net9.0\MarketInventory.Infrastructure.AssemblyInfo.cs
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\obj\Debug\net9.0\MarketInventory.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\obj\Debug\net9.0\MarketIn.EB6FE837.Up2Date
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\obj\Debug\net9.0\MarketInventory.Infrastructure.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\obj\Debug\net9.0\refint\MarketInventory.Infrastructure.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\obj\Debug\net9.0\MarketInventory.Infrastructure.pdb
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\obj\Debug\net9.0\MarketInventory.Infrastructure.genruntimeconfig.cache
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Infrastructure\obj\Debug\net9.0\ref\MarketInventory.Infrastructure.dll
