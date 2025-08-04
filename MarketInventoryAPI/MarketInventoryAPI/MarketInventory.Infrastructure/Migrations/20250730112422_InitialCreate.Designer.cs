@@ -336,9 +336,7 @@ namespace MarketInventory.Infrastructure.Migrations
             modelBuilder.Entity("MarketInventory.Domain.Entities.Urun", b =>
                 {
                     b.Navigation("Barkodlar");
-
                     b.Navigation("Fiyatlar");
-
                     b.Navigation("StokHareketleri");
                 });
 #pragma warning restore 612, 618

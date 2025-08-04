@@ -10,6 +10,7 @@ namespace MarketInventory.Infrastructure.Data
         public MarketDbContext(DbContextOptions<MarketDbContext> options)
             : base(options)
         {
+        
         }
 
         public DbSet<Urun> Urunler { get; set; } = null!;

@@ -24,9 +24,8 @@ namespace MarketInventory.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Burada Fluent API konfigürasyonlarını yazacağız
+          
 
-            // Örnek: Barkod.Kod alanı benzersiz olmalı
             modelBuilder.Entity<Barkod>()
                 .HasIndex(b => b.Kod)
                 .IsUnique();
@@ -34,7 +33,7 @@ namespace MarketInventory.Infrastructure.Data
             // Soft delete için global query filter örneği (örneğin Urun için)
             modelBuilder.Entity<Urun>().HasQueryFilter(u => u.SilinmeTarihi == null);
 
-            // İlişkiler otomatik algılanır ama örnek vermek gerekirse:
+        
             modelBuilder.Entity<Urun>()
                 .HasOne(u => u.Birim)
                 .WithMany(b => b.Urunler)
@@ -48,7 +47,6 @@ namespace MarketInventory.Infrastructure.Data
                 .HasForeignKey(k => k.KullaniciTuruId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Diğer ilişkileri senin ihtiyacına göre buraya ekleyebiliriz
         }
     }
 }
