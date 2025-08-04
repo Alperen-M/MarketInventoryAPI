@@ -1,0 +1,237 @@
+[
+  {
+    "ContainingType": "MarketInventory.API.Controllers.BarkodController",
+    "Method": "GetAll",
+    "RelativePath": "api/Barkod",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.BarkodController",
+    "Method": "Create",
+    "RelativePath": "api/Barkod",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "barkod",
+        "Type": "MarketInventory.Domain.Entities.Barkod",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.BirimController",
+    "Method": "GetAll",
+    "RelativePath": "api/Birim",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.BirimController",
+    "Method": "Create",
+    "RelativePath": "api/Birim",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "birim",
+        "Type": "MarketInventory.Domain.Entities.Birim",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.KullaniciController",
+    "Method": "GetAll",
+    "RelativePath": "api/Kullanici",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.KullaniciController",
+    "Method": "Create",
+    "RelativePath": "api/Kullanici",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "kullanici",
+        "Type": "MarketInventory.Domain.Entities.Kullanici",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.KullaniciTuruController",
+    "Method": "GetAll",
+    "RelativePath": "api/KullaniciTuru",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.KullaniciTuruController",
+    "Method": "Create",
+    "RelativePath": "api/KullaniciTuru",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tur",
+        "Type": "MarketInventory.Domain.Entities.KullaniciTuru",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.StokHareketiController",
+    "Method": "GetAll",
+    "RelativePath": "api/StokHareketi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.StokHareketiController",
+    "Method": "Create",
+    "RelativePath": "api/StokHareketi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "hareket",
+        "Type": "MarketInventory.Domain.Entities.StokHareketi",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.UrunController",
+    "Method": "GetAll",
+    "RelativePath": "api/Urun",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.UrunController",
+    "Method": "Create",
+    "RelativePath": "api/Urun",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "urun",
+        "Type": "Urun",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.UrunController",
+    "Method": "Get",
+    "RelativePath": "api/Urun/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.UrunController",
+    "Method": "Update",
+    "RelativePath": "api/Urun/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "urun",
+        "Type": "Urun",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.UrunController",
+    "Method": "Delete",
+    "RelativePath": "api/Urun/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.UrunFiyatController",
+    "Method": "GetAll",
+    "RelativePath": "api/UrunFiyat",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.UrunFiyatController",
+    "Method": "Create",
+    "RelativePath": "api/UrunFiyat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fiyat",
+        "Type": "MarketInventory.Domain.Entities.UrunFiyat",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
