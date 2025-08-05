@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JSaSZg2xr4U=",
+  "dgSpecHash": "mc/1qpoj3w8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI.csproj",
+  "projectFilePath": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ALPEREN\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\ALPEREN\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

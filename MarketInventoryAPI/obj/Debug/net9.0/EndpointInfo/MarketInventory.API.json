@@ -1,0 +1,703 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Market Inventory API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Barkod": {
+      "get": {
+        "tags": [
+          "Barkod"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Barkod"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Barkod"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Barkod"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Barkod"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Birim": {
+      "get": {
+        "tags": [
+          "Birim"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Birim"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Birim"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Birim"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Birim"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Kullanici": {
+      "get": {
+        "tags": [
+          "Kullanici"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Kullanici"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kullanici"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kullanici"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kullanici"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/KullaniciTuru": {
+      "get": {
+        "tags": [
+          "KullaniciTuru"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "KullaniciTuru"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KullaniciTuru"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KullaniciTuru"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KullaniciTuru"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/StokHareketi": {
+      "get": {
+        "tags": [
+          "StokHareketi"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "StokHareketi"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StokHareketi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StokHareketi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StokHareketi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Urun": {
+      "get": {
+        "tags": [
+          "Urun"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Urun"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Urun"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Urun"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Urun"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Urun/{id}": {
+      "get": {
+        "tags": [
+          "Urun"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Urun"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Urun"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Urun"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Urun"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Urun"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/UrunFiyat": {
+      "get": {
+        "tags": [
+          "UrunFiyat"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UrunFiyat"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UrunFiyat"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UrunFiyat"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UrunFiyat"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Barkod": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "kod": {
+            "type": "string",
+            "nullable": true
+          },
+          "urunId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "urun": {
+            "$ref": "#/components/schemas/Urun"
+          },
+          "urunBirimId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "urunBirimi": {
+            "$ref": "#/components/schemas/Birim"
+          },
+          "aktifMi": {
+            "type": "boolean"
+          },
+          "kayitTarihi": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "guncellemeTarihi": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "silinmeTarihi": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdById": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "createdByUser": {
+            "$ref": "#/components/schemas/Kullanici"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Birim": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ad": {
+            "type": "string",
+            "nullable": true
+          },
+          "carpan": {
+            "type": "number",
+            "format": "double"
+          },
+          "createdById": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "createdByUser": {
+            "$ref": "#/components/schemas/Kullanici"
+          },
+          "urunler": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Urun"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Kullanici": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "kullaniciAdi": {
+            "type": "string",
+            "nullable": true
+          },
+          "sifre": {
+            "type": "string",
+            "nullable": true
+          },
+          "kayitTarihi": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "guncellemeTarihi": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "silinmeTarihi": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "kullaniciTuruId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "kullaniciTuru": {
+            "$ref": "#/components/schemas/KullaniciTuru"
+          },
+          "createdById": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "createdByUser": {
+            "$ref": "#/components/schemas/Kullanici"
+          }
+        },
+        "additionalProperties": false
+      },
+      "KullaniciTuru": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ad": {
+            "type": "string",
+            "nullable": true
+          },
+          "kullanicilar": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Kullanici"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StokHareketi": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "urunId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "urun": {
+            "$ref": "#/components/schemas/Urun"
+          },
+          "kayitTarihi": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "guncellemeTarihi": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "silinmeTarihi": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "hareketTuru": {
+            "type": "string",
+            "nullable": true
+          },
+          "birimId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "birim": {
+            "$ref": "#/components/schemas/Birim"
+          },
+          "miktar": {
+            "type": "number",
+            "format": "double"
+          },
+          "createdById": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "createdByUser": {
+            "$ref": "#/components/schemas/Kullanici"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Urun": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ad": {
+            "type": "string",
+            "nullable": true
+          },
+          "tur": {
+            "type": "string",
+            "nullable": true
+          },
+          "kayitTarihi": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "guncellemeTarihi": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "silinmeTarihi": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "birimId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "birim": {
+            "$ref": "#/components/schemas/Birim"
+          },
+          "createdById": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "createdByUser": {
+            "$ref": "#/components/schemas/Kullanici"
+          },
+          "barkodlar": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Barkod"
+            },
+            "nullable": true
+          },
+          "fiyatlar": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UrunFiyat"
+            },
+            "nullable": true
+          },
+          "stokHareketleri": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StokHareketi"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UrunFiyat": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "aktifMi": {
+            "type": "boolean"
+          },
+          "baslangicTarihi": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sonTarih": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fiyat": {
+            "type": "number",
+            "format": "double"
+          },
+          "createdById": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "createdByUser": {
+            "$ref": "#/components/schemas/Kullanici"
+          },
+          "urunId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "urun": {
+            "$ref": "#/components/schemas/Urun"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -6,8 +6,8 @@ namespace MarketInventory.Application.Interfaces
     {
         Task<IEnumerable<Barkod>> GetAllAsync();
         Task<Barkod?> GetByIdAsync(int id);
-        Task<Barkod> CreateAsync(Barkod barkod);
-        Task<bool> UpdateAsync(Barkod barkod);
-        Task<bool> DeleteAsync(int id);
+        Task<Barkod> AddAsync(Barkod entity);
+        Task<Barkod> UpdateAsync(Barkod entity);
+        Task DeleteAsync(int id);
     }
 }

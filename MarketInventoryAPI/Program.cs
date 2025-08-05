@@ -1,6 +1,5 @@
 ﻿using MarketInventory.Application.Interfaces;
 using MarketInventory.Application.Services;
-using MarketInventory.Application.Services.Interfaces;
 using MarketInventory.Infrastructure.Data;
 using MarketInventory.Infrastructure.Repositories;
 using MarketInventory.Infrastructure.Repositories.Interfaces;
@@ -13,12 +12,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MarketDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped<IUrunService, UrunService>();
+//builder.Services.AddScoped<IUrunService, UrunService>();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
 
 
 // Dependency Injection
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
+builder.Services.AddScoped<IUrunService, UrunService>();
+
 
 // Controllers
 builder.Services.AddControllers();

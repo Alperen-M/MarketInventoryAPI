@@ -1,13 +1,10 @@
-﻿using MarketInventory.Domain.Entities;
+﻿using MarketInventory.Application.Interfaces;
+using MarketInventory.Domain.Entities;
 
-namespace MarketInventory.Application.Interfaces
+namespace MarketInventory.Application.Services.Interfaces
 {
-    public interface IKullaniciService
+    public interface IKullaniciService : IGenericService<Kullanici>
     {
-        Task<IEnumerable<Kullanici>> GetAllAsync();
-        Task<Kullanici?> GetByIdAsync(int id);
-        Task<Kullanici> CreateAsync(Kullanici kullanici);
-        Task<bool> UpdateAsync(Kullanici kullanici);
-        Task<bool> DeleteAsync(int id);
+        Task<Kullanici?> GetKullaniciWithDetayAsync(int id);
     }
 }

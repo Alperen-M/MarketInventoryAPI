@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketInventoryAPI", "MarketInventoryAPI\MarketInventoryAPI.csproj", "{711D7B5E-F79F-46F5-926A-D90E186AA0D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketInventory.API", "MarketInventoryAPI\MarketInventory.API.csproj", "{711D7B5E-F79F-46F5-926A-D90E186AA0D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketInventory.Domain", "MarketInventory.Domain\MarketInventory.Domain.csproj", "{AAE67707-207E-4B57-BD34-48DBAB183406}"
 EndProject

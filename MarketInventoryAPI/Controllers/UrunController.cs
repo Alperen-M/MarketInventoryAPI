@@ -1,36 +1,45 @@
-﻿using MarketInventory.Application.Interfaces;
-using MarketInventory.Domain.Entities;
+﻿using MarketInventory.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-
-namespace MarketInventory.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
 public class UrunController : ControllerBase
 {
-    private readonly IUrunService _urunService;
+    private readonly IUrunService _service;
 
-    public UrunController(IUrunService urunService)
+    public UrunController(IUrunService service)
     {
-        _urunService = urunService;
+        _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll() => Ok(await _urunService.GetAllAsync());
+    public async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(int id) => Ok(await _urunService.GetByIdAsync(id));
+    public async Task<IActionResult> GetById(int id)
+    {
+        var item = await _service.GetByIdAsync(id);
+        return item == null ? NotFound() : Ok(item);
+    }
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] Urun urun) => Ok(await _urunService.CreateAsync(urun));
+    public async Task<IActionResult> Create([FromBody] Urun entity)
+        => Ok(await _service.CreateAsync(entity));
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] Urun urun)
+    public async Task<IActionResult> Update(int id, [FromBody] Urun entity)
     {
-        urun.Id = id;
-        return Ok(await _urunService.UpdateAsync(urun));
+        if (id != entity.Id) return BadRequest();
+        await _service.UpdateAsync(entity);
+        return NoContent();
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id) => Ok(await _urunService.DeleteAsync(id));
+    public async Task<IActionResult> Delete(int id)
+    {
+        var item = await _service.GetByIdAsync(id);
+        if (item == null) return NotFound();
+        await _service.DeleteAsync(item);
+        return NoContent();
+    }
 }

@@ -5199,6 +5199,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "MarketInventory.Application >= 1.0.0",
+      "MarketInventory.Domain >= 1.0.0",
       "MarketInventory.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 9.0.7",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.7",
@@ -5213,9 +5214,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI.csproj",
-      "projectName": "MarketInventoryAPI",
-      "projectPath": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI.csproj",
+      "projectUniqueName": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.API.csproj",
+      "projectName": "MarketInventory.API",
+      "projectPath": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.API.csproj",
       "packagesPath": "C:\\Users\\ALPEREN\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\obj\\",
       "projectStyle": "PackageReference",
@@ -5240,6 +5241,9 @@
           "projectReferences": {
             "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Application\\MarketInventory.Application.csproj": {
               "projectPath": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Application\\MarketInventory.Application.csproj"
+            },
+            "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Domain\\MarketInventory.Domain.csproj": {
+              "projectPath": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Domain\\MarketInventory.Domain.csproj"
             },
             "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj": {
               "projectPath": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj"
@@ -5301,7 +5305,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

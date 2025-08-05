@@ -1,13 +1,10 @@
-﻿using MarketInventory.Domain.Entities;
+﻿using MarketInventory.Application.Interfaces;
+using MarketInventory.Domain.Entities;
 
-namespace MarketInventory.Application.Interfaces
+namespace MarketInventory.Application.Services.Interfaces
 {
-    public interface IBirimService
+    public interface IBirimService : IGenericService<Birim>
     {
-        Task<IEnumerable<Birim>> GetAllAsync();
-        Task<Birim?> GetByIdAsync(int id);
-        Task<Birim> CreateAsync(Birim birim);
-        Task<bool> UpdateAsync(Birim birim);
-        Task<bool> DeleteAsync(int id);
+
     }
 }

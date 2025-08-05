@@ -1,13 +1,10 @@
-﻿using MarketInventory.Domain.Entities;
+﻿using MarketInventory.Application.Interfaces;
+using MarketInventory.Domain.Entities;
 
-namespace MarketInventory.Application.Interfaces
+namespace MarketInventory.Application.Services.Interfaces
 {
-    public interface IUrunFiyatService
+    public interface IUrunFiyatService : IGenericService<UrunFiyat>
     {
-        Task<IEnumerable<UrunFiyat>> GetAllAsync();
-        Task<UrunFiyat?> GetByIdAsync(int id);
-        Task<UrunFiyat> CreateAsync(UrunFiyat fiyat);
-        Task<bool> UpdateAsync(UrunFiyat fiyat);
-        Task<bool> DeleteAsync(int id);
+        Task<IEnumerable<UrunFiyat>> GetFiyatlarByUrunIdAsync(int urunId);
     }
 }

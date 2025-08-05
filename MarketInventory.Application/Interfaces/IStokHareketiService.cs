@@ -1,13 +1,10 @@
-﻿using MarketInventory.Domain.Entities;
+﻿using MarketInventory.Application.Interfaces;
+using MarketInventory.Domain.Entities;
 
-namespace MarketInventory.Application.Interfaces
+namespace MarketInventory.Application.Services.Interfaces
 {
-    public interface IStokHareketiService
+    public interface IStokHareketiService : IGenericService<StokHareketi>
     {
-        Task<IEnumerable<StokHareketi>> GetAllAsync();
-        Task<StokHareketi?> GetByIdAsync(int id);
-        Task<StokHareketi> CreateAsync(StokHareketi hareket);
-        Task<bool> UpdateAsync(StokHareketi hareket);
-        Task<bool> DeleteAsync(int id);
+        Task<IEnumerable<StokHareketi>> GetStokHareketleriByUrunAsync(int urunId);
     }
 }
