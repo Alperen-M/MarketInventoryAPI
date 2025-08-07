@@ -26,9 +26,12 @@ public class BarkodController : ControllerBase
     }
 
     [HttpPost]
+  
     public async Task<IActionResult> Create([FromBody] Barkod barkod)
-        => Ok(await _barkodService.CreateAsync(barkod));
-
+    {
+        await _barkodService.AddAsync(barkod);
+        return NoContent();
+    }
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] Barkod barkod)
     {

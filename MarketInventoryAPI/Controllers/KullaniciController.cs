@@ -25,7 +25,10 @@ public class KullaniciController : ControllerBase
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] Kullanici kullanici)
-        => Ok(await _kullaniciService.CreateAsync(kullanici));
+    {
+        await _kullaniciService.AddAsync(kullanici);
+        return NoContent();
+    }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] Kullanici kullanici)

@@ -24,9 +24,9 @@ namespace MarketInventory.Application.Services
             return await _repository.GetByIdAsync(id);
         }
 
-        public async Task<T> AddAsync(T entity)
+        public async Task AddAsync(T entity)
         {
-            return await _repository.AddAsync(entity);
+             await _repository.AddAsync(entity);
         }
 
         public async Task UpdateAsync(T entity)
@@ -34,9 +34,9 @@ namespace MarketInventory.Application.Services
             await _repository.UpdateAsync(entity);
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(T entity)
         {
-            await _repository.DeleteAsync(id);
+            await _repository.DeleteAsync(entity);
         }
     }
 }

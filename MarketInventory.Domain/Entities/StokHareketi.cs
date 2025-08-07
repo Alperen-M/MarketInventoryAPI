@@ -18,7 +18,7 @@ public class StokHareketi
     public int BirimId { get; set; }
     public Birim? Birim { get; set; }
 
-    public decimal Miktar { get; set; }
+    public int Miktar { get; set; }
 
     public int? CreatedById { get; set; }
     public Kullanici? CreatedByUser { get; set; }

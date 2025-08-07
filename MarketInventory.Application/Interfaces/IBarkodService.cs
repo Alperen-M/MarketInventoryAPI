@@ -1,13 +1,14 @@
-﻿using MarketInventory.Domain.Entities;
+﻿using MarketInventory.Application.Interfaces;
+using MarketInventory.Domain.Entities;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace MarketInventory.Application.Interfaces
+namespace MarketInventory.Application.Services.Interfaces
 {
-    public interface IBarkodService
+    public interface IBarkodService : IGenericService<Barkod>
     {
-        Task<IEnumerable<Barkod>> GetAllAsync();
-        Task<Barkod?> GetByIdAsync(int id);
-        Task<Barkod> AddAsync(Barkod entity);
-        Task<Barkod> UpdateAsync(Barkod entity);
-        Task DeleteAsync(int id);
+        Task<IEnumerable<Barkod>> GetBarkodsByUrunIdAsync(int urunId);
+        Task<bool> BarkodExistsAsync(string barkodKodu);
+        Task<IEnumerable<Barkod>> GetActiveBarkodsAsync();
     }
 }

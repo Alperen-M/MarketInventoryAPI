@@ -11,3 +11,4 @@ C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInvent
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net9.0\MarketInventory.Domain.pdb
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net9.0\MarketInventory.Domain.genruntimeconfig.cache
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net9.0\ref\MarketInventory.Domain.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net9.0\MarketInventory.Domain.csproj.AssemblyReference.cache

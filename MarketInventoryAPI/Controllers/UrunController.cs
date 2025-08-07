@@ -24,7 +24,10 @@ public class UrunController : ControllerBase
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] Urun entity)
-        => Ok(await _service.CreateAsync(entity));
+    {
+        await _service.AddAsync(entity);
+        return NoContent();
+    }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] Urun entity)

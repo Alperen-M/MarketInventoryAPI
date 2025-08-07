@@ -17,9 +17,9 @@ public class Kullanici
     public DateTime? SilinmeTarihi { get; set; }
 
     public int KullaniciTuruId { get; set; }
-    public KullaniciTuru? KullaniciTuru { get; set; }
+    public KullaniciTuru KullaniciTuru { get; set; }
 
-    public int? CreatedById { get; set; }
-    public Kullanici? CreatedByUser { get; set; }
+    public int CreatedById { get; set; }
+    public Kullanici CreatedByUser { get; set; }
 }
 

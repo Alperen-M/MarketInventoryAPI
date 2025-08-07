@@ -17,5 +17,10 @@ namespace MarketInventory.Infrastructure.Repositories
                 .Include(k => k.KullaniciTuru)
                 .FirstOrDefaultAsync(k => k.Id == id);
         }
+        public async Task<bool> GetLoginInfoAsync(string KullaniciAdi ,string Sifre)
+        {
+            return await _dbSet.Where(x => x.KullaniciAdi == KullaniciAdi && x.Sifre == Sifre)
+               .AnyAsync();
+        }
     }
 }

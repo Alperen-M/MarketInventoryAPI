@@ -41,19 +41,22 @@ namespace MarketInventory.Infrastructure.Repositories
             await _dbSet.AddRangeAsync(entities);
         }
 
-        public void Update(T entity)
+        public async Task UpdateAsync(T entity)
         {
             _dbSet.Update(entity);
         }
 
-        public void Remove(T entity)
+      
+
+
+        public async Task DeleteAsync(T entity)
         {
             _dbSet.Remove(entity);
         }
 
-        public void RemoveRange(IEnumerable<T> entities)
+        public object GetAll()
         {
-            _dbSet.RemoveRange(entities);
+            throw new NotImplementedException();
         }
     }
 }

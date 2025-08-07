@@ -1,5 +1,6 @@
 ﻿using MarketInventory.Application.Services.Interfaces;
 using MarketInventory.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 [Route("api/[controller]")]
@@ -14,6 +15,7 @@ public class StokHareketiController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
 
     [HttpGet("{id}")]
@@ -25,7 +27,10 @@ public class StokHareketiController : ControllerBase
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] StokHareketi entity)
-        => Ok(await _service.CreateAsync(entity));
+    {
+        await _service.AddAsync(entity);
+        return NoContent();
+    }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] StokHareketi entity)

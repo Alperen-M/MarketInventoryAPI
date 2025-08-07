@@ -25,7 +25,10 @@ public class BirimController : ControllerBase
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] Birim birim)
-        => Ok(await _birimService.CreateAsync(birim));
+    { 
+        await _birimService.AddAsync(birim);
+        return NoContent();
+    }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] Birim birim)

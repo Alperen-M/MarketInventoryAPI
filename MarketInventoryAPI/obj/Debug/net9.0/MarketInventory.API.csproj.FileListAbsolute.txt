@@ -1,11 +1,3 @@
-C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.csproj.AssemblyReference.cache
-C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\rpswa.dswa.cache.json
-C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.AssemblyInfoInputs.cache
-C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.AssemblyInfo.cs
-C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.csproj.CoreCompileInputs.cache
-C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\appsettings.json
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\MarketInventory.API.staticwebassets.endpoints.json
@@ -17,6 +9,7 @@ C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInvent
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\Azure.Core.dll
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\Azure.Identity.dll
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\Humanizer.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\Microsoft.Build.Locator.dll
@@ -155,6 +148,14 @@ C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInvent
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\MarketInventory.Application.pdb
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\MarketInventory.Domain.pdb
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\bin\Debug\net9.0\MarketInventory.Infrastructure.pdb
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.csproj.AssemblyReference.cache
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.AssemblyInfoInputs.cache
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.AssemblyInfo.cs
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.csproj.CoreCompileInputs.cache
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\MarketInventory.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventoryAPI\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
