@@ -26,6 +26,7 @@ public class AuthController : ControllerBase
       
 
         if (isLoginValid == null)
+        
             return Unauthorized("Geçersiz giriş");
 
         var token = _tokenGenerator.GenerateToken(new Kullanici()
