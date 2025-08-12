@@ -25,7 +25,7 @@ namespace MarketInventory.Infrastructure.Security
             var claims = new List<Claim>
             { 
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Role, user.KullaniciTuru?.Ad ?? "Musteri"), // örnek: "Admin"
+            new Claim(ClaimTypes.Role, user.KullaniciTuru?.Ad ?? "Musteri"),
             new Claim(ClaimTypes.Name, user.KullaniciAdi ?? "Kullanici"),
             new Claim(ClaimTypes.Name, user.KullaniciAdi ?? "Admin")
                 };
