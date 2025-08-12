@@ -9,11 +9,11 @@ public class StokHareketi
     public DateTime? GuncellemeTarihi { get; set; }
     public DateTime? SilinmeTarihi { get; set; }
 
-    public string HareketTuru { get; set; } = string.Empty; // "Giriş"/"Çıkış"
+    public string HareketTuru { get; set; } = string.Empty;
     public int BirimId { get; set; }
     public Birim? Birim { get; set; }
 
-    // stok miktarı decimal olmalı
+   
     public decimal Miktar { get; set; }
 
     public int? CreatedById { get; set; }
