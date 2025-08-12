@@ -1,49 +1,53 @@
-﻿using MarketInventory.Application.Services.Interfaces;
-using MarketInventory.Domain.Entities;
+﻿using MarketInventory.Application.Dtos;
+using MarketInventory.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-[Route("api/[controller]")]
-[ApiController]
-public class KullaniciTuruController : ControllerBase
+namespace MarketInventory.API.Controllers
 {
-    private readonly IKullaniciTuruService _service;
-
-    public KullaniciTuruController(IKullaniciTuruService service)
+    [Route("api/[controller]")]
+    [ApiController]
+    public class KullaniciTuruController : ControllerBase
     {
-        _service = service;
-    }
+        private readonly IKullaniciTuruService _service;
 
-    [HttpGet]
-    public async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
+        public KullaniciTuruController(IKullaniciTuruService service)
+        {
+            _service = service;
+        }
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(int id)
-    {
-        var item = await _service.GetByIdAsync(id);
-        return item == null ? NotFound() : Ok(item);
-    }
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = await _service.GetAllAsync();
+            return Ok(result);
+        }
 
-    [HttpPost]
-    public async Task<IActionResult> Create([FromBody] KullaniciTuru entity)
-    {
-        await _service.AddAsync(entity);
-        return NoContent();
-    }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var result = await _service.GetByIdAsync(id);
+            return result == null ? NotFound() : Ok(result);
+        }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] KullaniciTuru entity)
-    {
-        if (id != entity.Id) return BadRequest();
-        await _service.UpdateAsync(entity);
-        return NoContent();
-    }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateKullaniciTuruDto dto)
+        {
+            await _service.AddAsync(dto);
+            return Ok("Kullanıcı türü eklendi.");
+        }
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        var item = await _service.GetByIdAsync(id);
-        if (item == null) return NotFound();
-        await _service.DeleteAsync(item);
-        return NoContent();
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] CreateKullaniciTuruDto dto)
+        {
+            await _service.UpdateAsync(id, dto);
+            return Ok("Kullanıcı türü güncellendi.");
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _service.DeleteAsync(id);
+            return Ok("Kullanıcı türü silindi.");
+        }
     }
 }

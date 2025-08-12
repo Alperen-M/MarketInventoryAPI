@@ -26,7 +26,8 @@ namespace MarketInventory.Infrastructure.Security
             { 
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new Claim(ClaimTypes.Role, user.KullaniciTuru?.Ad ?? "Musteri"), // örnek: "Admin"
-            new Claim(ClaimTypes.Name, user.KullaniciAdi ?? "Kullanici")
+            new Claim(ClaimTypes.Name, user.KullaniciAdi ?? "Kullanici"),
+            new Claim(ClaimTypes.Name, user.KullaniciAdi ?? "Admin")
                 };
 
             var token = new JwtSecurityToken(

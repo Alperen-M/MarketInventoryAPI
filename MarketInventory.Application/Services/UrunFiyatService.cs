@@ -1,50 +1,114 @@
-﻿using MarketInventory.Application.Interfaces;
+﻿using MarketInventory.Application.DTOs.UrunFiyat;
 using MarketInventory.Application.Services.Interfaces;
 using MarketInventory.Domain.Entities;
 using MarketInventory.Infrastructure.Repositories.Interfaces;
 
 namespace MarketInventory.Application.Services
 {
-    public class UrunFiyatService : GenericService<UrunFiyat>, IUrunFiyatService
+    public class UrunFiyatService : IUrunFiyatService
     {
-        private readonly IUrunFiyatRepository _urunFiyatRepository;
+        private readonly IUrunFiyatRepository _repo;
 
-        public UrunFiyatService(IUrunFiyatRepository repository) : base(repository)
+        public UrunFiyatService(IUrunFiyatRepository repo)
         {
-            _urunFiyatRepository = repository;
+            _repo = repo;
         }
 
-        public async Task<IEnumerable<UrunFiyat>> GetFiyatlarByUrunIdAsync(int urunId)
+        public async Task<IEnumerable<UrunFiyatDto>> GetAllAsync()
         {
-            var all = await _urunFiyatRepository.GetAllAsync();
-            return all.Where(f => f.UrunId == urunId);
+            var list = await _repo.GetAllAsync();
+            return list.Select(MapToDto);
         }
 
-        public async Task<IEnumerable<UrunFiyat>> GetAktifFiyatlarAsync()
+        public async Task<UrunFiyatDto?> GetByIdAsync(int id)
         {
-            return await _urunFiyatRepository.GetAktifFiyatlarAsync();
+            var entity = await _repo.GetByIdAsync(id);
+            return entity == null ? null : MapToDto(entity);
         }
 
-        public async Task<UrunFiyat?> GetEnGuncelFiyatAsync(int urunId)
+        public async Task CreateAsync(CreateUrunFiyatDto dto)
         {
-            var all = await _urunFiyatRepository.GetAllAsync();
-            return all
+            var entity = new UrunFiyat
+            {
+                AktifMi = dto.AktifMi,
+                BaslangicTarihi = dto.BaslangicTarihi,
+                SonTarih = dto.SonTarih,
+                Fiyat = dto.Fiyat,
+                UrunId = (int)dto.UrunId
+            };
+            await _repo.AddAsync(entity);
+        }
+
+        public async Task UpdateAsync(UpdateUrunFiyatDto dto)
+        {
+            var entity = await _repo.GetByIdAsync(dto.Id);
+            if (entity == null) throw new Exception("Kayıt bulunamadı");
+
+            entity.AktifMi = dto.AktifMi;
+            entity.BaslangicTarihi = dto.BaslangicTarihi;
+            entity.SonTarih = dto.SonTarih;
+            entity.Fiyat = dto.Fiyat;
+            entity.UrunId = (int)dto.UrunId;
+
+            await _repo.UpdateAsync(entity);
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var entity = await _repo.GetByIdAsync(id);
+            if (entity != null)
+                await _repo.DeleteAsync(entity);
+        }
+
+        public async Task<IEnumerable<UrunFiyatDto>> GetFiyatlarByUrunIdAsync(int urunId)
+        {
+            var all = await _repo.GetAllAsync();
+            return all.Where(f => f.UrunId == urunId).Select(MapToDto);
+        }
+
+        public async Task<IEnumerable<UrunFiyatDto>> GetAktifFiyatlarAsync()
+        {
+            var list = await _repo.GetAktifFiyatlarAsync();
+            return list.Select(MapToDto);
+        }
+
+        public async Task<UrunFiyatDto?> GetEnGuncelFiyatAsync(int urunId)
+        {
+            var all = await _repo.GetAllAsync();
+            var entity = all
                 .Where(f => f.UrunId == urunId && f.AktifMi)
                 .OrderByDescending(f => f.BaslangicTarihi)
                 .FirstOrDefault();
+
+            return entity == null ? null : MapToDto(entity);
         }
 
-        public async Task<IEnumerable<UrunFiyat>> GetFiyatlarByPriceRangeAsync(decimal minPrice, decimal maxPrice)
+        public async Task<IEnumerable<UrunFiyatDto>> GetFiyatlarByPriceRangeAsync(decimal minPrice, decimal maxPrice)
         {
-            var all = await _urunFiyatRepository.GetAllAsync();
-            return all.Where(f => f.Fiyat >= minPrice && f.Fiyat <= maxPrice);
+            var all = await _repo.GetAllAsync();
+            return all.Where(f => f.Fiyat >= minPrice && f.Fiyat <= maxPrice)
+                      .Select(MapToDto);
         }
 
-        public async Task<IEnumerable<UrunFiyat>> GetFiyatlarByDateRangeAsync(int urunId, DateTime startDate, DateTime endDate)
+        public async Task<IEnumerable<UrunFiyatDto>> GetFiyatlarByDateRangeAsync(int urunId, DateTime startDate, DateTime endDate)
         {
-            var all = await _urunFiyatRepository.GetAllAsync();
-            return all.Where(f => f.UrunId == urunId && f.BaslangicTarihi >= startDate && f.SonTarih <= endDate);
+            var all = await _repo.GetAllAsync();
+            return all.Where(f => f.UrunId == urunId && f.BaslangicTarihi >= startDate && f.SonTarih <= endDate)
+                      .Select(MapToDto);
+        }
+
+        private UrunFiyatDto MapToDto(UrunFiyat entity)
+        {
+            return new UrunFiyatDto
+            {
+                Id = entity.Id,
+                AktifMi = entity.AktifMi,
+                BaslangicTarihi = entity.BaslangicTarihi,
+                SonTarih = (DateTime)entity.SonTarih,
+                Fiyat = entity.Fiyat,
+                UrunId = entity.UrunId,
+                UrunAdi = entity.Urun?.Ad
+            };
         }
     }
-
 }

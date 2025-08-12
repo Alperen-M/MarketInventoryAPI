@@ -1,83 +1,100 @@
-﻿using MarketInventory.Application.Interfaces;
-using MarketInventory.Application.Services.Interfaces;
+﻿using MarketInventory.Application.DTOs;
+using MarketInventory.Application.Interfaces;
 using MarketInventory.Domain.Entities;
-using MarketInventory.Infrastructure.Repositories.Interfaces;
+using MarketInventory.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
+using System;
 
 namespace MarketInventory.Application.Services
 {
-    public class UrunService : GenericService<Urun>, IUrunService
+    public class UrunService : IUrunService
     {
-        private readonly IUrunRepository _urunRepository;
-        private readonly IStokHareketiRepository _stokHareketiRepository;
+        private readonly MarketDbContext _context;
 
-        public UrunService(IUrunRepository urunRepository, IStokHareketiRepository stokHareketiRepository) : base(urunRepository)
+        public UrunService(MarketDbContext context)
         {
-            _urunRepository = urunRepository;
-            _stokHareketiRepository = stokHareketiRepository;
+            _context = context;
         }
 
-        public async Task<Urun?> GetUrunWithAllAsync(int id)
+        public async Task<IEnumerable<UrunReadDto>> GetAllAsync()
         {
-            return await _urunRepository.GetUrunWithAllAsync(id);
+            return await _context.Urunler
+                .Include(u => u.Birim)
+                .Select(u => new UrunReadDto
+                {
+                    Id = u.Id,
+                    Ad = u.Ad,
+                    Tur = u.Tur,
+                    BirimId = u.BirimId,
+                    BirimAdi = u.Birim != null ? u.Birim.Ad : null,
+                    KayitTarihi = u.KayitTarihi,
+                    GuncellemeTarihi = u.GuncellemeTarihi
+                })
+                .ToListAsync();
         }
 
-        public async Task<IEnumerable<Urun>> SearchAsync(string? name, string? kategori, string? marka)
+        public async Task<UrunReadDto?> GetByIdAsync(int id)
         {
-            var all = await _urunRepository.GetAllAsync();
+            var entity = await _context.Urunler
+                .Include(u => u.Birim)
+                .FirstOrDefaultAsync(u => u.Id == id);
 
-            if (!string.IsNullOrWhiteSpace(name))
-                all = all.Where(u => u.Ad.Contains(name, StringComparison.OrdinalIgnoreCase));
+            if (entity == null) return null;
 
-            if (!string.IsNullOrWhiteSpace(kategori))
-                all = all.Where(u => u.Tur != null && u.Tur.Contains(kategori, StringComparison.OrdinalIgnoreCase));
-
-            if (!string.IsNullOrWhiteSpace(marka))
-                all = all.Where(u => u.Tur != null && u.Tur.Contains(marka, StringComparison.OrdinalIgnoreCase));
-
-            return all;
+            return new UrunReadDto
+            {
+                Id = entity.Id,
+                Ad = entity.Ad,
+                Tur = entity.Tur,
+                BirimId = entity.BirimId,
+                BirimAdi = entity.Birim?.Ad,
+                KayitTarihi = entity.KayitTarihi,
+                GuncellemeTarihi = entity.GuncellemeTarihi
+            };
         }
 
-
-        public async Task<int> GetStokMiktariAsync(int urunId)
+        public async Task<UrunReadDto> AddAsync(UrunCreateDto dto)
         {
-            var stokHareketleri = await _stokHareketiRepository.GetWithUrunAsync();
+            var entity = new Urun
+            {
+                Ad = dto.Ad,
+                Tur = dto.Tur,
+                BirimId = dto.BirimId,
+                CreatedById = dto.CreatedById,
+                KayitTarihi = DateTime.UtcNow
+            };
 
-            var giris = stokHareketleri
-                .Where(sh => sh.UrunId == urunId && sh.HareketTuru == "Giriş")
-                .Sum(sh => sh.Miktar);
+            _context.Urunler.Add(entity);
+            await _context.SaveChangesAsync();
 
-            var cikis = stokHareketleri
-                .Where(sh => sh.UrunId == urunId && sh.HareketTuru == "Çıkış")
-                .Sum(sh => sh.Miktar);
-
-            return giris - cikis;
+            return await GetByIdAsync(entity.Id) ?? throw new Exception("Kayıt eklenemedi.");
         }
 
-        public async Task<(IEnumerable<Urun> Items, int TotalCount)> GetPagedProductsAsync(int pageIndex, int pageSize)
+        public async Task<bool> UpdateAsync(int id, UrunUpdateDto dto)
         {
-            var all = await _urunRepository.GetAllAsync();
-            var totalCount = all.Count();
+            var entity = await _context.Urunler.FindAsync(id);
+            if (entity == null) return false;
 
-            var items = all
-                .Skip(pageIndex * pageSize)
-                .Take(pageSize);
+            entity.Ad = dto.Ad;
+            entity.Tur = dto.Tur;
+            entity.BirimId = dto.BirimId;
+            entity.CreatedById = dto.CreatedById;
+            entity.GuncellemeTarihi = DateTime.UtcNow;
 
-            return (items, totalCount);
+            _context.Urunler.Update(entity);
+            await _context.SaveChangesAsync();
+            return true;
         }
 
-        public async Task<IEnumerable<Urun>> GetRecentProductsAsync(int count)
+        public async Task<bool> DeleteAsync(int id)
         {
-            var all = await _urunRepository.GetAllAsync();
+            var entity = await _context.Urunler.FindAsync(id);
+            if (entity == null) return false;
 
-            return all
-                .OrderByDescending(u => u.KayitTarihi)
-                .Take(count);
-        }
-
-        public Task<IEnumerable<Urun>> GetActiveProductsAsync()
-        {
-            throw new NotImplementedException();
+            _context.Urunler.Remove(entity);
+            await _context.SaveChangesAsync();
+            return true;
         }
     }
-
 }

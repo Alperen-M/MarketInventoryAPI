@@ -1,15 +1,17 @@
 ﻿using MarketInventory.Application.Interfaces;
 using MarketInventory.Domain.Entities;
 
+using MarketInventory.Application.Dtos;
+
 namespace MarketInventory.Application.Services.Interfaces
 {
-    public interface IKullaniciTuruService : IGenericService<KullaniciTuru>
+    public interface IKullaniciTuruService
     {
-        Task<KullaniciTuru?> GetWithUsersAsync(int id);
-        Task<KullaniciTuru?> GetByNameAsync(string name);
-        Task<IEnumerable<KullaniciTuru>> GetActiveUserTypesAsync();
-        Task<bool> IsNameUniqueAsync(string name);
+        Task<IEnumerable<KullaniciTuruDto>> GetAllAsync();
+        Task<KullaniciTuruDto?> GetByIdAsync(int id);
+        Task AddAsync(CreateKullaniciTuruDto dto);
+        Task UpdateAsync(int id, CreateKullaniciTuruDto dto);
+        Task DeleteAsync(int id);
     }
-
-
 }
+

@@ -1,32 +1,101 @@
 [
   {
-    "ContainingType": "MarketInventory.API.Controllers.BarkodController",
-    "Method": "GetAll",
-    "RelativePath": "api/Barkod",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MarketInventory.API.Controllers.BarkodController",
-    "Method": "Create",
-    "RelativePath": "api/Barkod",
+    "ContainingType": "MarketInventory.API.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "barkod",
-        "Type": "MarketInventory.Domain.Entities.Barkod",
+        "Name": "request",
+        "Type": "MarketInventory.API.Controllers.LoginRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MarketInventory.API.Controllers.BirimController",
+    "ContainingType": "MarketInventory.API.Controllers.BarkodController",
+    "Method": "GetAll",
+    "RelativePath": "api/Barkod",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.BarkodController",
+    "Method": "Create",
+    "RelativePath": "api/Barkod",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MarketInventory.Application.Dtos.Barkod.BarkodCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.BarkodController",
+    "Method": "GetById",
+    "RelativePath": "api/Barkod/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.BarkodController",
+    "Method": "Update",
+    "RelativePath": "api/Barkod/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MarketInventory.Application.Dtos.Barkod.BarkodUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.BarkodController",
+    "Method": "Delete",
+    "RelativePath": "api/Barkod/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BirimController",
     "Method": "GetAll",
     "RelativePath": "api/Birim",
     "HttpMethod": "GET",
@@ -36,7 +105,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MarketInventory.API.Controllers.BirimController",
+    "ContainingType": "BirimController",
     "Method": "Create",
     "RelativePath": "api/Birim",
     "HttpMethod": "POST",
@@ -44,8 +113,61 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "birim",
-        "Type": "MarketInventory.Domain.Entities.Birim",
+        "Name": "dto",
+        "Type": "MarketInventory.Application.Dtos.Barkod.BirimCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BirimController",
+    "Method": "GetById",
+    "RelativePath": "api/Birim/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BirimController",
+    "Method": "Update",
+    "RelativePath": "api/Birim/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MarketInventory.Application.Dtos.Barkod.BirimUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BirimController",
+    "Method": "Delete",
+    "RelativePath": "api/Birim/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -78,6 +200,59 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MarketInventory.API.Controllers.KullaniciController",
+    "Method": "GetById",
+    "RelativePath": "api/Kullanici/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.KullaniciController",
+    "Method": "Update",
+    "RelativePath": "api/Kullanici/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "kullanici",
+        "Type": "MarketInventory.Domain.Entities.Kullanici",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.KullaniciController",
+    "Method": "Delete",
+    "RelativePath": "api/Kullanici/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MarketInventory.API.Controllers.KullaniciTuruController",
     "Method": "GetAll",
     "RelativePath": "api/KullaniciTuru",
@@ -96,8 +271,61 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "tur",
-        "Type": "MarketInventory.Domain.Entities.KullaniciTuru",
+        "Name": "dto",
+        "Type": "MarketInventory.Application.Dtos.CreateKullaniciTuruDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.KullaniciTuruController",
+    "Method": "GetById",
+    "RelativePath": "api/KullaniciTuru/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.KullaniciTuruController",
+    "Method": "Update",
+    "RelativePath": "api/KullaniciTuru/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MarketInventory.Application.Dtos.CreateKullaniciTuruDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.KullaniciTuruController",
+    "Method": "Delete",
+    "RelativePath": "api/KullaniciTuru/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -122,8 +350,61 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "hareket",
-        "Type": "MarketInventory.Domain.Entities.StokHareketi",
+        "Name": "dto",
+        "Type": "MarketInventory.Application.DTOs.StokHareketiCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.StokHareketiController",
+    "Method": "GetById",
+    "RelativePath": "api/StokHareketi/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.StokHareketiController",
+    "Method": "Update",
+    "RelativePath": "api/StokHareketi/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MarketInventory.Application.DTOs.StokHareketiUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketInventory.API.Controllers.StokHareketiController",
+    "Method": "Delete",
+    "RelativePath": "api/StokHareketi/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -148,8 +429,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "urun",
-        "Type": "Urun",
+        "Name": "dto",
+        "Type": "MarketInventory.Application.DTOs.UrunCreateDto",
         "IsRequired": true
       }
     ],
@@ -157,7 +438,7 @@
   },
   {
     "ContainingType": "MarketInventory.API.Controllers.UrunController",
-    "Method": "Get",
+    "Method": "GetById",
     "RelativePath": "api/Urun/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -185,8 +466,8 @@
         "IsRequired": true
       },
       {
-        "Name": "urun",
-        "Type": "Urun",
+        "Name": "dto",
+        "Type": "MarketInventory.Application.DTOs.UrunUpdateDto",
         "IsRequired": true
       }
     ],
@@ -209,7 +490,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MarketInventory.API.Controllers.UrunFiyatController",
+    "ContainingType": "UrunFiyatController",
     "Method": "GetAll",
     "RelativePath": "api/UrunFiyat",
     "HttpMethod": "GET",
@@ -219,7 +500,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MarketInventory.API.Controllers.UrunFiyatController",
+    "ContainingType": "UrunFiyatController",
     "Method": "Create",
     "RelativePath": "api/UrunFiyat",
     "HttpMethod": "POST",
@@ -227,8 +508,150 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "fiyat",
-        "Type": "MarketInventory.Domain.Entities.UrunFiyat",
+        "Name": "dto",
+        "Type": "MarketInventory.Application.DTOs.UrunFiyat.CreateUrunFiyatDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UrunFiyatController",
+    "Method": "GetById",
+    "RelativePath": "api/UrunFiyat/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UrunFiyatController",
+    "Method": "Update",
+    "RelativePath": "api/UrunFiyat/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "MarketInventory.Application.DTOs.UrunFiyat.UpdateUrunFiyatDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UrunFiyatController",
+    "Method": "Delete",
+    "RelativePath": "api/UrunFiyat/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UrunFiyatController",
+    "Method": "GetAktifFiyatlar",
+    "RelativePath": "api/UrunFiyat/aktif",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UrunFiyatController",
+    "Method": "GetByDateRange",
+    "RelativePath": "api/UrunFiyat/date-range",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "urunId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UrunFiyatController",
+    "Method": "GetEnGuncelFiyat",
+    "RelativePath": "api/UrunFiyat/enguncel/{urunId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "urunId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UrunFiyatController",
+    "Method": "GetByPriceRange",
+    "RelativePath": "api/UrunFiyat/price-range",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "minPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "maxPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UrunFiyatController",
+    "Method": "GetByUrunId",
+    "RelativePath": "api/UrunFiyat/urun/{urunId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "urunId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

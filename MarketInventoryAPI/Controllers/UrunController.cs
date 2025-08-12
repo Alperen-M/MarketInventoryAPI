@@ -1,48 +1,52 @@
-﻿using MarketInventory.Application.Services.Interfaces;
+﻿using MarketInventory.Application.DTOs;
+using MarketInventory.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-[Route("api/[controller]")]
-[ApiController]
-public class UrunController : ControllerBase
+namespace MarketInventory.API.Controllers
 {
-    private readonly IUrunService _service;
-
-    public UrunController(IUrunService service)
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UrunController : ControllerBase
     {
-        _service = service;
-    }
+        private readonly IUrunService _service;
 
-    [HttpGet]
-    public async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
+        public UrunController(IUrunService service)
+        {
+            _service = service;
+        }
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(int id)
-    {
-        var item = await _service.GetByIdAsync(id);
-        return item == null ? NotFound() : Ok(item);
-    }
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _service.GetAllAsync());
+        }
 
-    [HttpPost]
-    public async Task<IActionResult> Create([FromBody] Urun entity)
-    {
-        await _service.AddAsync(entity);
-        return NoContent();
-    }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var item = await _service.GetByIdAsync(id);
+            return item == null ? NotFound() : Ok(item);
+        }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] Urun entity)
-    {
-        if (id != entity.Id) return BadRequest();
-        await _service.UpdateAsync(entity);
-        return NoContent();
-    }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] UrunCreateDto dto)
+        {
+            var created = await _service.AddAsync(dto);
+            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+        }
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        var item = await _service.GetByIdAsync(id);
-        if (item == null) return NotFound();
-        await _service.DeleteAsync(item);
-        return NoContent();
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] UrunUpdateDto dto)
+        {
+            var result = await _service.UpdateAsync(id, dto);
+            return result ? NoContent() : NotFound();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await _service.DeleteAsync(id);
+            return result ? NoContent() : NotFound();
+        }
     }
 }

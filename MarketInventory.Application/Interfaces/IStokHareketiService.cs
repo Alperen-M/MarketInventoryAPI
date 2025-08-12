@@ -1,15 +1,16 @@
 ﻿using MarketInventory.Application.Interfaces;
 using MarketInventory.Domain.Entities;
+using MarketInventory.Application.DTOs;
 
-namespace MarketInventory.Application.Services.Interfaces
+namespace MarketInventory.Application.Interfaces
 {
-    public interface IStokHareketiService : IGenericService<StokHareketi>
+    public interface IStokHareketiService
     {
-        Task<IEnumerable<StokHareketi>> GetStokHareketleriByUrunAsync(int urunId);
-        Task<IEnumerable<StokHareketi>> GetStokHareketleriByDateRangeAsync(int urunId, DateTime startDate, DateTime endDate);
-        Task<IEnumerable<StokHareketi>> GetStokHareketleriByTypeAsync(int urunId, string hareketTipi); // örn: "Giriş" veya "Çıkış"
-        Task<decimal> GetNetStokMiktariAsync(int urunId); // Toplam stok
+        Task<IEnumerable<StokHareketiReadDto>> GetAllAsync();
+        Task<StokHareketiReadDto?> GetByIdAsync(int id);
+        Task<StokHareketiReadDto> AddAsync(StokHareketiCreateDto dto);
+        Task<bool> UpdateAsync(int id, StokHareketiUpdateDto dto);
+        Task<bool> DeleteAsync(int id);
     }
-
-
 }
+

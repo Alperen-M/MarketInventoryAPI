@@ -5,6 +5,37 @@
     "version": "v1"
   },
   "paths": {
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Barkod": {
       "get": {
         "tags": [
@@ -24,21 +55,105 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Barkod"
+                "$ref": "#/components/schemas/BarkodCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Barkod"
+                "$ref": "#/components/schemas/BarkodCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Barkod"
+                "$ref": "#/components/schemas/BarkodCreateDto"
               }
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Barkod/{id}": {
+      "get": {
+        "tags": [
+          "Barkod"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Barkod"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BarkodUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BarkodUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BarkodUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Barkod"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -65,21 +180,105 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Birim"
+                "$ref": "#/components/schemas/BirimCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Birim"
+                "$ref": "#/components/schemas/BirimCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Birim"
+                "$ref": "#/components/schemas/BirimCreateDto"
               }
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Birim/{id}": {
+      "get": {
+        "tags": [
+          "Birim"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Birim"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BirimUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BirimUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BirimUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Birim"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -128,6 +327,90 @@
         }
       }
     },
+    "/api/Kullanici/{id}": {
+      "get": {
+        "tags": [
+          "Kullanici"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Kullanici"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kullanici"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kullanici"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kullanici"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Kullanici"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/KullaniciTuru": {
       "get": {
         "tags": [
@@ -147,21 +430,105 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/KullaniciTuru"
+                "$ref": "#/components/schemas/CreateKullaniciTuruDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/KullaniciTuru"
+                "$ref": "#/components/schemas/CreateKullaniciTuruDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/KullaniciTuru"
+                "$ref": "#/components/schemas/CreateKullaniciTuruDto"
               }
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/KullaniciTuru/{id}": {
+      "get": {
+        "tags": [
+          "KullaniciTuru"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "KullaniciTuru"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateKullaniciTuruDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateKullaniciTuruDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateKullaniciTuruDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "KullaniciTuru"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -188,21 +555,105 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/StokHareketi"
+                "$ref": "#/components/schemas/StokHareketiCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/StokHareketi"
+                "$ref": "#/components/schemas/StokHareketiCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/StokHareketi"
+                "$ref": "#/components/schemas/StokHareketiCreateDto"
               }
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/StokHareketi/{id}": {
+      "get": {
+        "tags": [
+          "StokHareketi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "StokHareketi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StokHareketiUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StokHareketiUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StokHareketiUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "StokHareketi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -229,17 +680,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Urun"
+                "$ref": "#/components/schemas/UrunCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Urun"
+                "$ref": "#/components/schemas/UrunCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Urun"
+                "$ref": "#/components/schemas/UrunCreateDto"
               }
             }
           }
@@ -292,17 +743,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Urun"
+                "$ref": "#/components/schemas/UrunUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Urun"
+                "$ref": "#/components/schemas/UrunUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Urun"
+                "$ref": "#/components/schemas/UrunUpdateDto"
               }
             }
           }
@@ -354,17 +805,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UrunFiyat"
+                "$ref": "#/components/schemas/CreateUrunFiyatDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UrunFiyat"
+                "$ref": "#/components/schemas/CreateUrunFiyatDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UrunFiyat"
+                "$ref": "#/components/schemas/CreateUrunFiyatDto"
               }
             }
           }
@@ -375,11 +826,251 @@
           }
         }
       }
+    },
+    "/api/UrunFiyat/{id}": {
+      "get": {
+        "tags": [
+          "UrunFiyat"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UrunFiyat"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUrunFiyatDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUrunFiyatDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUrunFiyatDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UrunFiyat"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/UrunFiyat/urun/{urunId}": {
+      "get": {
+        "tags": [
+          "UrunFiyat"
+        ],
+        "parameters": [
+          {
+            "name": "urunId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/UrunFiyat/aktif": {
+      "get": {
+        "tags": [
+          "UrunFiyat"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/UrunFiyat/enguncel/{urunId}": {
+      "get": {
+        "tags": [
+          "UrunFiyat"
+        ],
+        "parameters": [
+          {
+            "name": "urunId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/UrunFiyat/price-range": {
+      "get": {
+        "tags": [
+          "UrunFiyat"
+        ],
+        "parameters": [
+          {
+            "name": "minPrice",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "maxPrice",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/UrunFiyat/date-range": {
+      "get": {
+        "tags": [
+          "UrunFiyat"
+        ],
+        "parameters": [
+          {
+            "name": "urunId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
-      "Barkod": {
+      "BarkodCreateDto": {
+        "type": "object",
+        "properties": {
+          "kod": {
+            "type": "string",
+            "nullable": true
+          },
+          "urunId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "urunBirimId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "aktifMi": {
+            "type": "boolean"
+          },
+          "createdById": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "urunBirimi": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BarkodUpdateDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -395,45 +1086,31 @@
             "format": "int32",
             "nullable": true
           },
-          "urun": {
-            "$ref": "#/components/schemas/Urun"
-          },
-          "urunBirimId": {
+          "birimId": {
             "type": "integer",
             "format": "int32"
           },
-          "urunBirimi": {
-            "$ref": "#/components/schemas/Birim"
-          },
           "aktifMi": {
             "type": "boolean"
-          },
-          "kayitTarihi": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "guncellemeTarihi": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "silinmeTarihi": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "createdById": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "createdByUser": {
-            "$ref": "#/components/schemas/Kullanici"
           }
         },
         "additionalProperties": false
       },
-      "Birim": {
+      "BirimCreateDto": {
+        "type": "object",
+        "properties": {
+          "ad": {
+            "type": "string",
+            "nullable": true
+          },
+          "carpan": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BirimUpdateDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -447,20 +1124,41 @@
           "carpan": {
             "type": "number",
             "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateKullaniciTuruDto": {
+        "type": "object",
+        "properties": {
+          "ad": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateUrunFiyatDto": {
+        "type": "object",
+        "properties": {
+          "aktifMi": {
+            "type": "boolean"
           },
-          "createdById": {
+          "baslangicTarihi": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sonTarih": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fiyat": {
+            "type": "number",
+            "format": "double"
+          },
+          "urunId": {
             "type": "integer",
             "format": "int32",
-            "nullable": true
-          },
-          "createdByUser": {
-            "$ref": "#/components/schemas/Kullanici"
-          },
-          "urunler": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Urun"
-            },
             "nullable": true
           }
         },
@@ -509,6 +1207,13 @@
           },
           "createdByUser": {
             "$ref": "#/components/schemas/Kullanici"
+          },
+          "createdUsers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Kullanici"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -534,7 +1239,49 @@
         },
         "additionalProperties": false
       },
-      "StokHareketi": {
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "kullaniciAdi": {
+            "type": "string",
+            "nullable": true
+          },
+          "sifre": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StokHareketiCreateDto": {
+        "type": "object",
+        "properties": {
+          "urunId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hareketTuru": {
+            "type": "string",
+            "nullable": true
+          },
+          "birimId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "miktar": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdById": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StokHareketiUpdateDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -546,23 +1293,6 @@
             "format": "int32",
             "nullable": true
           },
-          "urun": {
-            "$ref": "#/components/schemas/Urun"
-          },
-          "kayitTarihi": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "guncellemeTarihi": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "silinmeTarihi": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
           "hareketTuru": {
             "type": "string",
             "nullable": true
@@ -571,93 +1301,19 @@
             "type": "integer",
             "format": "int32"
           },
-          "birim": {
-            "$ref": "#/components/schemas/Birim"
-          },
           "miktar": {
-            "type": "number",
-            "format": "double"
+            "type": "integer",
+            "format": "int32"
           },
           "createdById": {
             "type": "integer",
             "format": "int32",
             "nullable": true
-          },
-          "createdByUser": {
-            "$ref": "#/components/schemas/Kullanici"
           }
         },
         "additionalProperties": false
       },
-      "Urun": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "ad": {
-            "type": "string",
-            "nullable": true
-          },
-          "tur": {
-            "type": "string",
-            "nullable": true
-          },
-          "kayitTarihi": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "guncellemeTarihi": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "silinmeTarihi": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "birimId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "birim": {
-            "$ref": "#/components/schemas/Birim"
-          },
-          "createdById": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "createdByUser": {
-            "$ref": "#/components/schemas/Kullanici"
-          },
-          "barkodlar": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Barkod"
-            },
-            "nullable": true
-          },
-          "fiyatlar": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UrunFiyat"
-            },
-            "nullable": true
-          },
-          "stokHareketleri": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StokHareketi"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "UrunFiyat": {
+      "UpdateUrunFiyatDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -679,25 +1335,77 @@
             "type": "number",
             "format": "double"
           },
-          "createdById": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "createdByUser": {
-            "$ref": "#/components/schemas/Kullanici"
-          },
           "urunId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UrunCreateDto": {
+        "type": "object",
+        "properties": {
+          "ad": {
+            "type": "string",
+            "nullable": true
           },
-          "urun": {
-            "$ref": "#/components/schemas/Urun"
+          "tur": {
+            "type": "string",
+            "nullable": true
+          },
+          "birimId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdById": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UrunUpdateDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ad": {
+            "type": "string",
+            "nullable": true
+          },
+          "tur": {
+            "type": "string",
+            "nullable": true
+          },
+          "birimId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdById": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           }
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
+        "name": "Authorization",
+        "in": "header"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }

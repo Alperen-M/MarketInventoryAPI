@@ -1,44 +1,86 @@
-﻿using MarketInventory.Application.Interfaces;
+﻿using MarketInventory.Application.Dtos;
 using MarketInventory.Application.Services.Interfaces;
 using MarketInventory.Domain.Entities;
 using MarketInventory.Infrastructure.Repositories.Interfaces;
 
 namespace MarketInventory.Application.Services
 {
-    public class KullaniciTuruService : GenericService<KullaniciTuru>, IKullaniciTuruService
+    public class KullaniciTuruService : IKullaniciTuruService
     {
         private readonly IGenericRepository<KullaniciTuru> _repository;
 
-        public KullaniciTuruService(IGenericRepository<KullaniciTuru> repository) : base(repository)
+        public KullaniciTuruService(IGenericRepository<KullaniciTuru> repository)
         {
             _repository = repository;
         }
 
-        public async Task<KullaniciTuru?> GetWithUsersAsync(int id)
+        public async Task<IEnumerable<KullaniciTuruDto>> GetAllAsync()
         {
-            // Eğer repositoryde özel metod yoksa tüm kayıtları çekip filtrelemek performans için uygun değil
-            // Bu durumda repositoryde Include ile getirme metodu yazmalısın.
-            var all = await _repository.GetAllAsync();
-            return all.FirstOrDefault(kt => kt.Id == id);
+            var list = await _repository.GetAllAsync();
+            return list.Select(x => new KullaniciTuruDto
+            {
+                Id = x.Id,
+                Ad = x.Ad
+            });
         }
 
-        public async Task<KullaniciTuru?> GetByNameAsync(string name)
+        public async Task<KullaniciTuruDto?> GetByIdAsync(int id)
         {
-            var all = await _repository.GetAllAsync();
-            return all.FirstOrDefault(kt => kt.Ad.ToLower() == name.ToLower());
+            var entity = await _repository.GetByIdAsync(id);
+            if (entity == null) return null;
+
+            return new KullaniciTuruDto
+            {
+                Id = entity.Id,
+                Ad = entity.Ad
+            };
         }
 
-     
-        public async Task<bool> IsNameUniqueAsync(string name)
+        public async Task AddAsync(CreateKullaniciTuruDto dto)
         {
-            var all = await _repository.GetAllAsync();
-            return !all.Any(kt => kt.Ad.ToLower() == name.ToLower());
+            var entity = new KullaniciTuru
+            {
+                Ad = dto.Ad
+            };
+            await _repository.AddAsync(entity);
+        }
+
+        public async Task UpdateAsync(int id, CreateKullaniciTuruDto dto)
+        {
+            var entity = await _repository.GetByIdAsync(id);
+            if (entity == null) throw new Exception("Kullanıcı türü bulunamadı.");
+
+            entity.Ad = dto.Ad;
+            await _repository.UpdateAsync(entity);
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var entity = await _repository.GetByIdAsync(id);
+            if (entity != null)
+            {
+                await _repository.DeleteAsync(entity);
+            }
+        }
+
+        public Task<KullaniciTuru?> GetWithUsersAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<KullaniciTuru?> GetByNameAsync(string name)
+        {
+            throw new NotImplementedException();
         }
 
         public Task<IEnumerable<KullaniciTuru>> GetActiveUserTypesAsync()
         {
             throw new NotImplementedException();
         }
-    }
 
+        public Task<bool> IsNameUniqueAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

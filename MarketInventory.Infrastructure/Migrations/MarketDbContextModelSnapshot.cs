@@ -17,7 +17,7 @@ namespace MarketInventory.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.7")
+                .HasAnnotation("ProductVersion", "9.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -33,10 +33,10 @@ namespace MarketInventory.Infrastructure.Migrations
                     b.Property<bool>("AktifMi")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("CreatedById")
+                    b.Property<int>("BirimId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CreatedByUserId")
+                    b.Property<int?>("CreatedById")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("GuncellemeTarihi")
@@ -52,23 +52,21 @@ namespace MarketInventory.Infrastructure.Migrations
                     b.Property<DateTime?>("SilinmeTarihi")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UrunBirimId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UrunBirimiId")
-                        .HasColumnType("int");
+                    b.Property<string>("UrunBirimi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("UrunId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedByUserId");
+                    b.HasIndex("BirimId");
+
+                    b.HasIndex("CreatedById");
 
                     b.HasIndex("Kod")
                         .IsUnique();
-
-                    b.HasIndex("UrunBirimiId");
 
                     b.HasIndex("UrunId");
 
@@ -88,17 +86,15 @@ namespace MarketInventory.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Carpan")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("CreatedById")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedByUserId");
+                    b.HasIndex("CreatedById");
 
                     b.ToTable("Birimler");
                 });
@@ -112,9 +108,6 @@ namespace MarketInventory.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("CreatedById")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CreatedByUserId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("GuncellemeTarihi")
@@ -139,7 +132,7 @@ namespace MarketInventory.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedByUserId");
+                    b.HasIndex("CreatedById");
 
                     b.HasIndex("KullaniciTuruId");
 
@@ -177,9 +170,6 @@ namespace MarketInventory.Infrastructure.Migrations
                     b.Property<int?>("CreatedById")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("GuncellemeTarihi")
                         .HasColumnType("datetime2");
 
@@ -191,6 +181,7 @@ namespace MarketInventory.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("Miktar")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime?>("SilinmeTarihi")
@@ -203,11 +194,50 @@ namespace MarketInventory.Infrastructure.Migrations
 
                     b.HasIndex("BirimId");
 
-                    b.HasIndex("CreatedByUserId");
+                    b.HasIndex("CreatedById");
 
                     b.HasIndex("UrunId");
 
                     b.ToTable("StokHareketleri");
+                });
+
+            modelBuilder.Entity("MarketInventory.Domain.Entities.Urun", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Ad")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("BirimId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CreatedById")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("GuncellemeTarihi")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("KayitTarihi")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("SilinmeTarihi")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Tur")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BirimId");
+
+                    b.HasIndex("CreatedById");
+
+                    b.ToTable("Urunler");
                 });
 
             modelBuilder.Entity("MarketInventory.Domain.Entities.UrunFiyat", b =>
@@ -227,95 +257,56 @@ namespace MarketInventory.Infrastructure.Migrations
                     b.Property<int?>("CreatedById")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Fiyat")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("SonTarih")
+                    b.Property<DateTime?>("SonTarih")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("UrunId")
+                    b.Property<int>("UrunId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedByUserId");
+                    b.HasIndex("CreatedById");
 
                     b.HasIndex("UrunId");
 
                     b.ToTable("UrunFiyatlar");
                 });
 
-            modelBuilder.Entity("Urun", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Ad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("BirimId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CreatedById")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CreatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("GuncellemeTarihi")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("KayitTarihi")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("SilinmeTarihi")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Tur")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BirimId");
-
-                    b.HasIndex("CreatedByUserId");
-
-                    b.ToTable("Urunler");
-                });
-
             modelBuilder.Entity("MarketInventory.Domain.Entities.Barkod", b =>
                 {
+                    b.HasOne("MarketInventory.Domain.Entities.Birim", "Birim")
+                        .WithMany("Barkodlar")
+                        .HasForeignKey("BirimId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("MarketInventory.Domain.Entities.Kullanici", "CreatedByUser")
                         .WithMany()
-                        .HasForeignKey("CreatedByUserId");
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MarketInventory.Domain.Entities.Birim", "UrunBirimi")
-                        .WithMany()
-                        .HasForeignKey("UrunBirimiId");
-
-                    b.HasOne("Urun", "Urun")
+                    b.HasOne("MarketInventory.Domain.Entities.Urun", "Urun")
                         .WithMany("Barkodlar")
-                        .HasForeignKey("UrunId");
+                        .HasForeignKey("UrunId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Birim");
 
                     b.Navigation("CreatedByUser");
 
                     b.Navigation("Urun");
-
-                    b.Navigation("UrunBirimi");
                 });
 
             modelBuilder.Entity("MarketInventory.Domain.Entities.Birim", b =>
                 {
                     b.HasOne("MarketInventory.Domain.Entities.Kullanici", "CreatedByUser")
                         .WithMany()
-                        .HasForeignKey("CreatedByUserId");
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("CreatedByUser");
                 });
@@ -323,8 +314,9 @@ namespace MarketInventory.Infrastructure.Migrations
             modelBuilder.Entity("MarketInventory.Domain.Entities.Kullanici", b =>
                 {
                     b.HasOne("MarketInventory.Domain.Entities.Kullanici", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
+                        .WithMany("CreatedUsers")
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("MarketInventory.Domain.Entities.KullaniciTuru", "KullaniciTuru")
                         .WithMany("Kullanicilar")
@@ -340,18 +332,20 @@ namespace MarketInventory.Infrastructure.Migrations
             modelBuilder.Entity("MarketInventory.Domain.Entities.StokHareketi", b =>
                 {
                     b.HasOne("MarketInventory.Domain.Entities.Birim", "Birim")
-                        .WithMany()
+                        .WithMany("StokHareketleri")
                         .HasForeignKey("BirimId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("MarketInventory.Domain.Entities.Kullanici", "CreatedByUser")
                         .WithMany()
-                        .HasForeignKey("CreatedByUserId");
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Urun", "Urun")
+                    b.HasOne("MarketInventory.Domain.Entities.Urun", "Urun")
                         .WithMany("StokHareketleri")
-                        .HasForeignKey("UrunId");
+                        .HasForeignKey("UrunId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Birim");
 
@@ -360,22 +354,7 @@ namespace MarketInventory.Infrastructure.Migrations
                     b.Navigation("Urun");
                 });
 
-            modelBuilder.Entity("MarketInventory.Domain.Entities.UrunFiyat", b =>
-                {
-                    b.HasOne("MarketInventory.Domain.Entities.Kullanici", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedByUserId");
-
-                    b.HasOne("Urun", "Urun")
-                        .WithMany("Fiyatlar")
-                        .HasForeignKey("UrunId");
-
-                    b.Navigation("CreatedByUser");
-
-                    b.Navigation("Urun");
-                });
-
-            modelBuilder.Entity("Urun", b =>
+            modelBuilder.Entity("MarketInventory.Domain.Entities.Urun", b =>
                 {
                     b.HasOne("MarketInventory.Domain.Entities.Birim", "Birim")
                         .WithMany("Urunler")
@@ -385,16 +364,44 @@ namespace MarketInventory.Infrastructure.Migrations
 
                     b.HasOne("MarketInventory.Domain.Entities.Kullanici", "CreatedByUser")
                         .WithMany()
-                        .HasForeignKey("CreatedByUserId");
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Birim");
 
                     b.Navigation("CreatedByUser");
                 });
 
+            modelBuilder.Entity("MarketInventory.Domain.Entities.UrunFiyat", b =>
+                {
+                    b.HasOne("MarketInventory.Domain.Entities.Kullanici", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("MarketInventory.Domain.Entities.Urun", "Urun")
+                        .WithMany("Fiyatlar")
+                        .HasForeignKey("UrunId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CreatedByUser");
+
+                    b.Navigation("Urun");
+                });
+
             modelBuilder.Entity("MarketInventory.Domain.Entities.Birim", b =>
                 {
+                    b.Navigation("Barkodlar");
+
+                    b.Navigation("StokHareketleri");
+
                     b.Navigation("Urunler");
+                });
+
+            modelBuilder.Entity("MarketInventory.Domain.Entities.Kullanici", b =>
+                {
+                    b.Navigation("CreatedUsers");
                 });
 
             modelBuilder.Entity("MarketInventory.Domain.Entities.KullaniciTuru", b =>
@@ -402,7 +409,7 @@ namespace MarketInventory.Infrastructure.Migrations
                     b.Navigation("Kullanicilar");
                 });
 
-            modelBuilder.Entity("Urun", b =>
+            modelBuilder.Entity("MarketInventory.Domain.Entities.Urun", b =>
                 {
                     b.Navigation("Barkodlar");
 

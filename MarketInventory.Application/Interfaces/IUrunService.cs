@@ -1,17 +1,15 @@
 ﻿using MarketInventory.Application.Interfaces;
 using MarketInventory.Domain.Entities;
+using MarketInventory.Application.DTOs;
 
-namespace MarketInventory.Application.Services.Interfaces
+namespace MarketInventory.Application.Interfaces
 {
-    public interface IUrunService : IGenericService<Urun>
+    public interface IUrunService
     {
-        Task<Urun?> GetUrunWithAllAsync(int id);
-        Task<IEnumerable<Urun>> SearchAsync(string? name, string? kategori, string? marka);
-        Task<IEnumerable<Urun>> GetActiveProductsAsync();
-        Task<int> GetStokMiktariAsync(int urunId);
-        Task<(IEnumerable<Urun> Items, int TotalCount)> GetPagedProductsAsync(int pageIndex, int pageSize);
-        Task<IEnumerable<Urun>> GetRecentProductsAsync(int count);
+        Task<IEnumerable<UrunReadDto>> GetAllAsync();
+        Task<UrunReadDto?> GetByIdAsync(int id);
+        Task<UrunReadDto> AddAsync(UrunCreateDto dto);
+        Task<bool> UpdateAsync(int id, UrunUpdateDto dto);
+        Task<bool> DeleteAsync(int id);
     }
-
-
 }

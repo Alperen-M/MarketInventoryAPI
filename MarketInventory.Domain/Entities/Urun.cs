@@ -1,24 +1,19 @@
-﻿using MarketInventory.Domain.Entities;
-
+﻿namespace MarketInventory.Domain.Entities;
 public class Urun
 {
     public int Id { get; set; }
-
     public string Ad { get; set; } = string.Empty;
-
     public string? Tur { get; set; }
 
     public DateTime KayitTarihi { get; set; } = DateTime.UtcNow;
-
     public DateTime? GuncellemeTarihi { get; set; }
-
-    public DateTime? SilinmeTarihi { get; set; }
+    public DateTime? SilinmeTarihi { get; set; } // soft delete
 
     public int BirimId { get; set; }
     public Birim? Birim { get; set; }
 
-    public int? CreatedById { get; set; } // foreign key
-    public Kullanici? CreatedByUser { get; set; } // navigation
+    public int? CreatedById { get; set; }
+    public Kullanici? CreatedByUser { get; set; }
 
     public ICollection<Barkod> Barkodlar { get; set; } = new List<Barkod>();
     public ICollection<UrunFiyat> Fiyatlar { get; set; } = new List<UrunFiyat>();

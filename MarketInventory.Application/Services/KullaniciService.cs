@@ -2,6 +2,9 @@
 using MarketInventory.Application.Services.Interfaces;
 using MarketInventory.Domain.Entities;
 using MarketInventory.Infrastructure.Repositories.Interfaces;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MarketInventory.Application.Services
 {
@@ -32,20 +35,18 @@ namespace MarketInventory.Application.Services
             return !all.Any(k => k.KullaniciAdi.ToLower() == email.ToLower());
         }
 
-        
-
         public async Task<Kullanici?> LoginAsync(string email, string password)
         {
             var all = await _repository.GetAllAsync();
             return all.FirstOrDefault(k =>
                 k.KullaniciAdi.ToLower() == email.ToLower() &&
-                k.Sifre == password); 
+                k.Sifre == password);
         }
 
-        public Task<IEnumerable<Kullanici>> GetActiveKullanicilarAsync()
+        public async Task<IEnumerable<Kullanici>> GetActiveKullanicilarAsync()
         {
-            throw new NotImplementedException();
+            var all = await _repository.GetAllAsync();
+            return all.Where(k => k.SilinmeTarihi == null);
         }
     }
-
 }
