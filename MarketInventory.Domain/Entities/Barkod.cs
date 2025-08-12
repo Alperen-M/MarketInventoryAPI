@@ -4,11 +4,11 @@ public class Barkod
     public int Id { get; set; }
     public string Kod { get; set; } = string.Empty;
 
-    // Barkod'un ürüne bağlı olması isteniyorsa non-null; istersen nullable bırak:
+   
     public int? UrunId { get; set; }
     public Urun? Urun { get; set; }
 
-    public int BirimId { get; set; }     // hangi birim ile okutulacak (koli/adet vs)
+    public int BirimId { get; set; }     
     public Birim? Birim { get; set; }
 
     public bool AktifMi { get; set; } = true;
