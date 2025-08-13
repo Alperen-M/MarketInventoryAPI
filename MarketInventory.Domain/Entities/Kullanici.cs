@@ -12,10 +12,10 @@ public class Kullanici
     public int KullaniciTuruId { get; set; }
     public KullaniciTuru? KullaniciTuru { get; set; }
 
-    // Kim oluşturdu (nullable)
+    
     public int? CreatedById { get; set; }
     public Kullanici? CreatedByUser { get; set; }
 
-    // Eğer istersen, oluşturduğu kullanıcıları da tut:
+    
     public ICollection<Kullanici>? CreatedUsers { get; set; }
 }
