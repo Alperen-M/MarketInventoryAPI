@@ -14,37 +14,50 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ✅ DbContext
+// DbContext
 builder.Services.AddDbContext<MarketDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
-builder.Services.AddSingleton(jwtSettings);
-builder.Services.AddScoped<IJwtService, JwtService>();
+// ---- JWT Options & Service (tek servis) ----
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
+builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
 
 // JWT Authentication
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+var jwt = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>()!;
+Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
+
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
+            ValidIssuer = jwt.Issuer,
+
             ValidateAudience = true,
-            ValidateLifetime = true,
+            ValidAudience = jwt.Audience,
+
             ValidateIssuerSigningKey = true,
-            ValidIssuer = jwtSettings.Issuer,
-            ValidAudience = jwtSettings.Audience,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key)),
-            RoleClaimType = ClaimTypes.Role  // Role için claim tipi
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt.Key)),
+
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.Zero,              // saat farkı toleransı kapat
+            RoleClaimType = ClaimTypes.Role         // role claim tipi net
+        };
+
+        options.Events = new JwtBearerEvents
+        {
+            OnAuthenticationFailed = ctx =>
+            {
+                Console.WriteLine("JWT auth failed: " + ctx.Exception.Message);
+                return Task.CompletedTask;
+            }
         };
     });
 
-builder.Services.AddScoped<ITokenService, TokenService>();
-
-// ✅ Generic Repository
+// Repositories
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-
-// ✅ Repository Bağımlılıkları
 builder.Services.AddScoped<IBarkodRepository, BarkodRepository>();
 builder.Services.AddScoped<IBirimRepository, BirimRepository>();
 builder.Services.AddScoped<IKullaniciRepository, KullaniciRepository>();
@@ -53,7 +66,7 @@ builder.Services.AddScoped<IStokHareketiRepository, StokHareketiRepository>();
 builder.Services.AddScoped<IUrunRepository, UrunRepository>();
 builder.Services.AddScoped<IUrunFiyatRepository, UrunFiyatRepository>();
 
-// ✅ Servis Bağımlılıkları
+// Services
 builder.Services.AddScoped<IBarkodService, BarkodService>();
 builder.Services.AddScoped<IBirimService, BirimService>();
 builder.Services.AddScoped<IKullaniciService, KullaniciService>();
@@ -62,27 +75,22 @@ builder.Services.AddScoped<IStokHareketiService, StokHareketiService>();
 builder.Services.AddScoped<IUrunService, UrunService>();
 builder.Services.AddScoped<IUrunFiyatService, UrunFiyatService>();
 
-// ✅ Controllers
 builder.Services.AddControllers();
 
-// ✅ Swagger
+// Swagger + JWT
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "Market Inventory API",
-        Version = "v1"
-    });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Market Inventory API", Version = "v1" });
 
-    // Swagger için JWT Authorization ekle
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
         Name = "Authorization",
+        Type = SecuritySchemeType.Http,   // <— Http + bearer
+        Scheme = "bearer",
+        BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer"
+        Description = "Sadece token gir: örn: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
     });
 
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -96,14 +104,13 @@ builder.Services.AddSwaggerGen(c =>
                     Id = "Bearer"
                 }
             },
-            new string[] { }
+            Array.Empty<string>()
         }
     });
 });
 
 var app = builder.Build();
 
-// ✅ Swagger middleware (dev ortamı için)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -112,10 +119,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();  // Burada Authentication middleware
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
 app.Run();

@@ -1,8 +1,10 @@
 ﻿using MarketInventory.Application.Dtos.Barkod;
 using MarketInventory.Application.Services.Interfaces;
 using MarketInventory.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+[Authorize(Roles = "Admin,Çalışan")]
 [Route("api/[controller]")]
 [ApiController]
 public class BirimController : ControllerBase

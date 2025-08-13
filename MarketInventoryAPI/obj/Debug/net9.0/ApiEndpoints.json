@@ -8,7 +8,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
+        "Name": "req",
         "Type": "MarketInventory.API.Controllers.LoginRequest",
         "IsRequired": true
       }

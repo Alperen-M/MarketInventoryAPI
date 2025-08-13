@@ -1,10 +1,12 @@
 ﻿using MarketInventory.Application.Services.Interfaces;
 using MarketInventory.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace MarketInventory.API.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class KullaniciController : ControllerBase

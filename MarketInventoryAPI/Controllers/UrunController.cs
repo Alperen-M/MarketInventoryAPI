@@ -1,5 +1,6 @@
 ﻿using MarketInventory.Application.DTOs;
 using MarketInventory.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MarketInventory.API.Controllers
@@ -16,12 +17,14 @@ namespace MarketInventory.API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _service.GetAllAsync());
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetById(int id)
         {
             var item = await _service.GetByIdAsync(id);
@@ -29,6 +32,7 @@ namespace MarketInventory.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,Çalışan")]
         public async Task<IActionResult> Create([FromBody] UrunCreateDto dto)
         {
             var created = await _service.AddAsync(dto);
@@ -36,6 +40,7 @@ namespace MarketInventory.API.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,Çalışan")]
         public async Task<IActionResult> Update(int id, [FromBody] UrunUpdateDto dto)
         {
             var result = await _service.UpdateAsync(id, dto);
@@ -43,6 +48,7 @@ namespace MarketInventory.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var result = await _service.DeleteAsync(id);

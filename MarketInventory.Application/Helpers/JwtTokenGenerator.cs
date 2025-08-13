@@ -1,4 +1,5 @@
 ﻿using MarketInventory.Domain.Entities;
+using MarketInventory.Infrastructure.Security;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -23,18 +24,18 @@ namespace MarketInventory.Infrastructure.Security
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new List<Claim>
-            { 
-            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Role, user.KullaniciTuru?.Ad ?? "Musteri"), // örnek: "Admin"
-            new Claim(ClaimTypes.Name, user.KullaniciAdi ?? "Kullanici"),
-            new Claim(ClaimTypes.Name, user.KullaniciAdi ?? "Admin")
-                };
+    {
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        new Claim(ClaimTypes.Role, user.KullaniciTuru?.Ad ?? "Admin"),
+        //new Claim(ClaimTypes.Role, user.KullaniciTuru?.Ad ?? "Çalışan"),
+        //new Claim(ClaimTypes.Role, user.KullaniciTuru?.Ad ?? "Müşteri"),
+    };
 
             var token = new JwtSecurityToken(
                 issuer: _jwtSettings.Issuer,
                 audience: _jwtSettings.Audience,
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(_jwtSettings.ExpireMinutes),
+                expires: DateTime.Now.AddMinutes(_jwtSettings.ExpiresMinutes),
                 signingCredentials: credentials
             );
 
@@ -43,3 +44,6 @@ namespace MarketInventory.Infrastructure.Security
 
     }
 }
+
+
+

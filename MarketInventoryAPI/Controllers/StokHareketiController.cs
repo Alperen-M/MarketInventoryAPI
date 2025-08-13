@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketInventory.API.Controllers
 {
+    [Authorize(Roles = "Admin,Çalışan")]
     [Route("api/[controller]")]
     [ApiController]
     public class StokHareketiController : ControllerBase
