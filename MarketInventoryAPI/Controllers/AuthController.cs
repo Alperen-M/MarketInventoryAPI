@@ -20,15 +20,18 @@ namespace MarketInventory.API.Controllers
         }
 
         [HttpPost("login")]
+        [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> Login([FromBody] LoginRequest req)
         {
             var user = await _ctx.Kullanicilar
                 .Include(k => k.KullaniciTuru)
                 .FirstOrDefaultAsync(x => x.KullaniciAdi == req.KullaniciAdi && x.Sifre == req.Sifre);
 
-            if (user == null) return Unauthorized("Kullanıcı adı veya şifre yanlış.");
+            if (user == null)
+                return Unauthorized("Kullanıcı adı veya şifre yanlış.");
 
-            var token = _jwt.Generate(user);
+            var token = _jwt.GenerateToken(user);
             return Ok(new { token, role = user.KullaniciTuru?.Ad });
         }
     }

@@ -96,3 +96,11 @@ C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInvent
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Application.UnitTests\obj\Debug\net9.0\MarketInventory.Application.UnitTests.pdb
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Application.UnitTests\obj\Debug\net9.0\MarketInventory.Application.UnitTests.genruntimeconfig.cache
 C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Application.UnitTests\obj\Debug\net9.0\ref\MarketInventory.Application.UnitTests.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Application.UnitTests\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Application.UnitTests\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Application.UnitTests\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Application.UnitTests\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Application.UnitTests\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Application.UnitTests\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Application.UnitTests\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Application.UnitTests\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll

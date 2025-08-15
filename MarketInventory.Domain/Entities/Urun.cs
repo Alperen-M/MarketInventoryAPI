@@ -7,7 +7,7 @@ public class Urun
 
     public DateTime KayitTarihi { get; set; } = DateTime.UtcNow;
     public DateTime? GuncellemeTarihi { get; set; }
-    public DateTime? SilinmeTarihi { get; set; }
+    public DateTime? SilinmeTarihi { get; set; } // soft delete
 
     public int BirimId { get; set; }
     public Birim? Birim { get; set; }

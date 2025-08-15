@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketInventory.API.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BarkodController : ControllerBase

@@ -7,6 +7,7 @@ using MarketInventory.Infrastructure.Repositories.Interfaces;
 using MarketInventory.Infrastructure.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Security.Claims;
@@ -18,43 +19,90 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MarketDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// ---- JWT Options & Service (tek servis) ----
+// JWT Ayarları
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
-builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
-
-// JWT Authentication
 var jwt = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>()!;
+
+// JWT Auth
 Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
 
-builder.Services
-    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//    .AddJwtBearer(options =>
+//    {
+//        options.TokenValidationParameters = new TokenValidationParameters
+//        {
+//            ValidateIssuer = true,
+//            ValidateAudience = true,
+//            ValidateLifetime = true,
+//            ValidateIssuerSigningKey = true,
+
+//            ValidIssuer = jwt.Issuer,
+//            ValidAudience = jwt.Audience,
+//            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt.Key)),
+
+//            RoleClaimType = ClaimTypes.Role,
+//            NameClaimType = ClaimTypes.Name,
+//            ClockSkew = TimeSpan.Zero
+//        };
+
+//        options.Events = new JwtBearerEvents
+//        {
+//            OnAuthenticationFailed = ctx =>
+//            {
+//                Console.WriteLine("JWT auth failed: " + ctx.Exception.Message);
+//                return Task.CompletedTask;
+//            }
+//        };
+//    });
+
+var jwtKey = "bAafd@A7d9#@F4*V!LHZs#ebKQrkE6pad2f3kj34c3dXy@"; // minimum 16 karakter
+var issuer = "MyAPI";
+var audience = "MyAPIUsers";
+
+// Authentication ekle
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
     {
-        options.TokenValidationParameters = new TokenValidationParameters
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = "yourdomain.com",
+        ValidAudience = "yourdomain.com",
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+    };
+
+    options.RequireHttpsMetadata = false;
+
+    options.Events = new JwtBearerEvents
+    {
+        OnAuthenticationFailed = context =>
         {
-            ValidateIssuer = true,
-            ValidIssuer = jwt.Issuer,
-
-            ValidateAudience = true,
-            ValidAudience = jwt.Audience,
-
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt.Key)),
-
-            ValidateLifetime = true,
-            ClockSkew = TimeSpan.Zero,              // saat farkı toleransı kapat
-            RoleClaimType = ClaimTypes.Role         // role claim tipi net
-        };
-
-        options.Events = new JwtBearerEvents
+            Console.WriteLine("Authentication Failed: " + context.Exception.Message);
+            return Task.CompletedTask;
+        },
+        OnChallenge = context =>
         {
-            OnAuthenticationFailed = ctx =>
-            {
-                Console.WriteLine("JWT auth failed: " + ctx.Exception.Message);
-                return Task.CompletedTask;
-            }
-        };
-    });
+            Console.WriteLine("OnChallenge triggered: " + context.Error + " - " + context.ErrorDescription);
+            return Task.CompletedTask;
+        },
+        OnMessageReceived = context =>
+        {
+            Console.WriteLine("Token received: " + context.Token);
+            return Task.CompletedTask;
+        }
+    };
+});
+
+// Token servisi
+builder.Services.AddScoped<IJwtTokenService, JwtTokenGenerator>();
+
 
 // Repositories
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
@@ -86,20 +134,18 @@ builder.Services.AddSwaggerGen(c =>
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
-        Type = SecuritySchemeType.Http,   // <— Http + bearer
+        Type = SecuritySchemeType.Http,
         Scheme = "bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "Sadece token gir: örn: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        Description = "Sadece token yapıştır (Bearer yazmana gerek yok)."
     });
 
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
+            new OpenApiSecurityScheme {
+                Reference = new OpenApiReference {
                     Type = ReferenceType.SecurityScheme,
                     Id = "Bearer"
                 }
@@ -123,4 +169,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
 app.Run();

@@ -1,0 +1,14 @@
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\bin\Debug\net8.0\MarketInventory.Domain.deps.json
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\bin\Debug\net8.0\MarketInventory.Domain.runtimeconfig.json
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\bin\Debug\net8.0\MarketInventory.Domain.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\bin\Debug\net8.0\MarketInventory.Domain.pdb
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net8.0\MarketInventory.Domain.csproj.AssemblyReference.cache
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net8.0\MarketInventory.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net8.0\MarketInventory.Domain.AssemblyInfoInputs.cache
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net8.0\MarketInventory.Domain.AssemblyInfo.cs
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net8.0\MarketInventory.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net8.0\MarketInventory.Domain.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net8.0\refint\MarketInventory.Domain.dll
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net8.0\MarketInventory.Domain.pdb
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net8.0\MarketInventory.Domain.genruntimeconfig.cache
+C:\Users\ALPEREN\Desktop\okul\MarketInventoryAPI\MarketInventoryAPI\MarketInventory.Domain\obj\Debug\net8.0\ref\MarketInventory.Domain.dll

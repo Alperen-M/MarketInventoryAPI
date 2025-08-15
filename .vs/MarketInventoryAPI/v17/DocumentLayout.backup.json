@@ -3,12 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A7B0AA2A-3174-4AFB-9290-1671DEAED11D}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventory.infrastructure\\marketinventory.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A7B0AA2A-3174-4AFB-9290-1671DEAED11D}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|solutionrelative:marketinventory.infrastructure\\marketinventory.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE67707-207E-4B57-BD34-48DBAB183406}|MarketInventory.Domain\\MarketInventory.Domain.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventory.domain\\marketinventory.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{AAE67707-207E-4B57-BD34-48DBAB183406}|MarketInventory.Domain\\MarketInventory.Domain.csproj|solutionrelative:marketinventory.domain\\marketinventory.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5716D598-025C-422E-8B8C-DFBECFAD752B}|MarketInventory.Application\\MarketInventory.Application.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventory.application\\marketinventory.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5716D598-025C-422E-8B8C-DFBECFAD752B}|MarketInventory.Application\\MarketInventory.Application.csproj|solutionrelative:marketinventory.application\\marketinventory.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\marketinventory.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\marketinventory.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5716D598-025C-422E-8B8C-DFBECFAD752B}|MarketInventory.Application\\MarketInventory.Application.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventory.application\\helpers\\jwttokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5716D598-025C-422E-8B8C-DFBECFAD752B}|MarketInventory.Application\\MarketInventory.Application.csproj|solutionrelative:marketinventory.application\\helpers\\jwttokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\controllers\\barkodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\controllers\\barkodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\controllers\\kullanicicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\controllers\\kullanicicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7B0AA2A-3174-4AFB-9290-1671DEAED11D}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventory.infrastructure\\security\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7B0AA2A-3174-4AFB-9290-1671DEAED11D}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|solutionrelative:marketinventory.infrastructure\\security\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A7B0AA2A-3174-4AFB-9290-1671DEAED11D}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventory.infrastructure\\security\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7B0AA2A-3174-4AFB-9290-1671DEAED11D}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|solutionrelative:marketinventory.infrastructure\\security\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7B0AA2A-3174-4AFB-9290-1671DEAED11D}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventory.infrastructure\\security\\ijwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7B0AA2A-3174-4AFB-9290-1671DEAED11D}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|solutionrelative:marketinventory.infrastructure\\security\\ijwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C9694C1-C96A-4C8D-BB2D-E5DB373691D1}|MarketInventory.Application.UnitTests\\MarketInventory.Application.UnitTests.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventory.application.unittests\\marketinventory.application.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4C9694C1-C96A-4C8D-BB2D-E5DB373691D1}|MarketInventory.Application.UnitTests\\MarketInventory.Application.UnitTests.csproj|solutionrelative:marketinventory.application.unittests\\marketinventory.application.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\marketinventoryapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -19,48 +63,12 @@
       "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7B0AA2A-3174-4AFB-9290-1671DEAED11D}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventory.infrastructure\\security\\ijwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7B0AA2A-3174-4AFB-9290-1671DEAED11D}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|solutionrelative:marketinventory.infrastructure\\security\\ijwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\marketinventory.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\marketinventory.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\controllers\\barkodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\controllers\\barkodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5716D598-025C-422E-8B8C-DFBECFAD752B}|MarketInventory.Application\\MarketInventory.Application.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventory.application\\services\\birimservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5716D598-025C-422E-8B8C-DFBECFAD752B}|MarketInventory.Application\\MarketInventory.Application.csproj|solutionrelative:marketinventory.application\\services\\birimservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\controllers\\urunfiyatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\controllers\\urunfiyatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\controllers\\uruncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\controllers\\uruncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\controllers\\stokhareketicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\controllers\\stokhareketicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\controllers\\birimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\controllers\\birimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAE67707-207E-4B57-BD34-48DBAB183406}|MarketInventory.Domain\\MarketInventory.Domain.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventory.domain\\entities\\kullanicituru.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAE67707-207E-4B57-BD34-48DBAB183406}|MarketInventory.Domain\\MarketInventory.Domain.csproj|solutionrelative:marketinventory.domain\\entities\\kullanicituru.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventoryapi\\marketinventoryapi\\marketinventoryapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{711D7B5E-F79F-46F5-926A-D90E186AA0D6}|MarketInventoryAPI\\MarketInventory.API.csproj|solutionrelative:marketinventoryapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,201 +78,227 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "JwtSettings.cs",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\Security\\JwtSettings.cs",
-              "RelativeDocumentMoniker": "MarketInventory.Infrastructure\\Security\\JwtSettings.cs",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\Security\\JwtSettings.cs",
-              "RelativeToolTip": "MarketInventory.Infrastructure\\Security\\JwtSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T13:09:18.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UrunController.cs",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\UrunController.cs",
-              "RelativeDocumentMoniker": "MarketInventoryAPI\\Controllers\\UrunController.cs",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\UrunController.cs",
-              "RelativeToolTip": "MarketInventoryAPI\\Controllers\\UrunController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAIwCoAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T08:47:47.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "StokHareketiController.cs",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\StokHareketiController.cs",
-              "RelativeDocumentMoniker": "MarketInventoryAPI\\Controllers\\StokHareketiController.cs",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\StokHareketiController.cs",
-              "RelativeToolTip": "MarketInventoryAPI\\Controllers\\StokHareketiController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAwwAkAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T08:47:37.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "BirimController.cs",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\BirimController.cs",
-              "RelativeDocumentMoniker": "MarketInventoryAPI\\Controllers\\BirimController.cs",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\BirimController.cs",
-              "RelativeToolTip": "MarketInventoryAPI\\Controllers\\BirimController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T08:47:18.491Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BarkodController.cs",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\BarkodController.cs",
-              "RelativeDocumentMoniker": "MarketInventoryAPI\\Controllers\\BarkodController.cs",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\BarkodController.cs",
-              "RelativeToolTip": "MarketInventoryAPI\\Controllers\\BarkodController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T08:47:02.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IJwtTokenService.cs",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\Security\\IJwtTokenService.cs",
-              "RelativeDocumentMoniker": "MarketInventory.Infrastructure\\Security\\IJwtTokenService.cs",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\Security\\IJwtTokenService.cs",
-              "RelativeToolTip": "MarketInventory.Infrastructure\\Security\\IJwtTokenService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T08:46:10.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "KullaniciTuru.cs",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Domain\\Entities\\KullaniciTuru.cs",
-              "RelativeDocumentMoniker": "MarketInventory.Domain\\Entities\\KullaniciTuru.cs",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Domain\\Entities\\KullaniciTuru.cs",
-              "RelativeToolTip": "MarketInventory.Domain\\Entities\\KullaniciTuru.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T08:25:09.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "JwtTokenGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Application\\Helpers\\JwtTokenGenerator.cs",
-              "RelativeDocumentMoniker": "MarketInventory.Application\\Helpers\\JwtTokenGenerator.cs",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Application\\Helpers\\JwtTokenGenerator.cs",
-              "RelativeToolTip": "MarketInventory.Application\\Helpers\\JwtTokenGenerator.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBwAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T12:09:48.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "MarketInventoryAPI\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "MarketInventoryAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T11:45:01.415Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "MarketInventory.API",
               "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.API.csproj",
               "RelativeDocumentMoniker": "MarketInventoryAPI\\MarketInventory.API.csproj",
               "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.API.csproj",
               "RelativeToolTip": "MarketInventoryAPI\\MarketInventory.API.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-13T11:40:50.048Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "MarketInventoryAPI\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\appsettings.Development.json",
-              "RelativeToolTip": "MarketInventoryAPI\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-13T12:54:17.174Z",
+              "WhenOpened": "2025-08-14T10:22:08.899Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "MarketInventoryAPI\\appsettings.json",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\appsettings.json",
-              "RelativeToolTip": "MarketInventoryAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-13T11:16:08.741Z",
+              "Title": "MarketInventory.Application",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Application\\MarketInventory.Application.csproj",
+              "RelativeDocumentMoniker": "MarketInventory.Application\\MarketInventory.Application.csproj",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Application\\MarketInventory.Application.csproj",
+              "RelativeToolTip": "MarketInventory.Application\\MarketInventory.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-14T10:21:59.592Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
+              "Title": "BarkodController.cs",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\BarkodController.cs",
+              "RelativeDocumentMoniker": "MarketInventoryAPI\\Controllers\\BarkodController.cs",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\BarkodController.cs",
+              "RelativeToolTip": "MarketInventoryAPI\\Controllers\\BarkodController.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAcwAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T06:58:10.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Program.cs",
               "RelativeDocumentMoniker": "MarketInventoryAPI\\Program.cs",
               "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Program.cs",
               "RelativeToolTip": "MarketInventoryAPI\\Program.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAYwH4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAmwFYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T11:17:01.412Z",
+              "WhenOpened": "2025-08-14T06:43:20.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MarketInventory.Domain",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Domain\\MarketInventory.Domain.csproj",
+              "RelativeDocumentMoniker": "MarketInventory.Domain\\MarketInventory.Domain.csproj",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Domain\\MarketInventory.Domain.csproj",
+              "RelativeToolTip": "MarketInventory.Domain\\MarketInventory.Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-14T10:52:59.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MarketInventory.Infrastructure",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj",
+              "RelativeToolTip": "MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-14T10:52:43.207Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "UrunFiyatController.cs",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\UrunFiyatController.cs",
-              "RelativeDocumentMoniker": "MarketInventoryAPI\\Controllers\\UrunFiyatController.cs",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\UrunFiyatController.cs",
-              "RelativeToolTip": "MarketInventoryAPI\\Controllers\\UrunFiyatController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwCUAAAAjAAAAAAAAAA==",
+              "Title": "IJwtTokenService.cs",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\Security\\IJwtTokenService.cs",
+              "RelativeDocumentMoniker": "MarketInventory.Infrastructure\\Security\\IJwtTokenService.cs",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\Security\\IJwtTokenService.cs",
+              "RelativeToolTip": "MarketInventory.Infrastructure\\Security\\IJwtTokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T08:47:58.426Z",
+              "WhenOpened": "2025-08-14T08:02:28.979Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "JwtSettings.cs",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\Security\\JwtSettings.cs",
+              "RelativeDocumentMoniker": "MarketInventory.Infrastructure\\Security\\JwtSettings.cs",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\Security\\JwtSettings.cs",
+              "RelativeToolTip": "MarketInventory.Infrastructure\\Security\\JwtSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T08:01:55.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ITokenService.cs",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\Security\\ITokenService.cs",
+              "RelativeDocumentMoniker": "MarketInventory.Infrastructure\\Security\\ITokenService.cs",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Infrastructure\\Security\\ITokenService.cs",
+              "RelativeToolTip": "MarketInventory.Infrastructure\\Security\\ITokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T10:40:41.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "BirimService.cs",
               "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Application\\Services\\BirimService.cs",
               "RelativeDocumentMoniker": "MarketInventory.Application\\Services\\BirimService.cs",
               "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Application\\Services\\BirimService.cs",
               "RelativeToolTip": "MarketInventory.Application\\Services\\BirimService.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAIwCMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwCIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T11:06:17.557Z",
+              "WhenOpened": "2025-08-14T08:42:31.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "JwtTokenGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Application\\Helpers\\JwtTokenGenerator.cs",
+              "RelativeDocumentMoniker": "MarketInventory.Application\\Helpers\\JwtTokenGenerator.cs",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Application\\Helpers\\JwtTokenGenerator.cs",
+              "RelativeToolTip": "MarketInventory.Application\\Helpers\\JwtTokenGenerator.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAACkAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T06:48:16.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MarketInventory.Application.UnitTests",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Application.UnitTests\\MarketInventory.Application.UnitTests.csproj",
+              "RelativeDocumentMoniker": "MarketInventory.Application.UnitTests\\MarketInventory.Application.UnitTests.csproj",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventory.Application.UnitTests\\MarketInventory.Application.UnitTests.csproj",
+              "RelativeToolTip": "MarketInventory.Application.UnitTests\\MarketInventory.Application.UnitTests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-14T11:00:41.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "KullaniciController.cs",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\KullaniciController.cs",
+              "RelativeDocumentMoniker": "MarketInventoryAPI\\Controllers\\KullaniciController.cs",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\KullaniciController.cs",
+              "RelativeToolTip": "MarketInventoryAPI\\Controllers\\KullaniciController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T13:41:37.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MarketInventoryAPI.http",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI.http",
+              "RelativeDocumentMoniker": "MarketInventoryAPI\\MarketInventoryAPI.http",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI.http",
+              "RelativeToolTip": "MarketInventoryAPI\\MarketInventoryAPI.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-08-14T12:53:39.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "MarketInventoryAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\appsettings.json",
+              "RelativeToolTip": "MarketInventoryAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-14T07:14:14.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "MarketInventoryAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "MarketInventoryAPI\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAgwCIAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T08:05:13.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "MarketInventoryAPI\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventoryAPI\\MarketInventoryAPI\\MarketInventoryAPI\\appsettings.Development.json",
+              "RelativeToolTip": "MarketInventoryAPI\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-14T09:54:34.368Z",
               "EditorCaption": ""
             }
           ]

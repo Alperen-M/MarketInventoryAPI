@@ -8,11 +8,12 @@ namespace MarketInventory.Infrastructure.Security
 {
     public class JwtSettings
     {
-        public string Key { get; set; } = null!;
-        public string Issuer { get; set; } = null!;
-        public string Audience { get; set; } = null!;
-        public int ExpiresMinutes { get; set; } = 60;
+        public string Key { get; set; } = "";
+        public string Issuer { get; set; } = "";
+        public string Audience { get; set; } = "";
+        public int ExpiresMinutes { get; set; }
     }
 }
+
 
 

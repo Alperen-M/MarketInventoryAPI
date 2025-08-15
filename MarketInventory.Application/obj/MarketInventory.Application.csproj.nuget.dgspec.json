@@ -60,10 +60,6 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[9.0.8, )"
-            },
-            "Microsoft.IdentityModel.Tokens": {
-              "target": "Package",
-              "version": "[8.13.0, )"
             }
           },
           "imports": [
@@ -141,10 +137,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.7, )"
-            },
-            "Microsoft.IdentityModel.Tokens": {
-              "target": "Package",
-              "version": "[8.13.0, )"
             }
           },
           "imports": [
@@ -236,10 +228,6 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[9.0.8, )"
-            },
-            "Microsoft.IdentityModel.Tokens": {
-              "target": "Package",
-              "version": "[8.13.0, )"
             }
           },
           "imports": [
