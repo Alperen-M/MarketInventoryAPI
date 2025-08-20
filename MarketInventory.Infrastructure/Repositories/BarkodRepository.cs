@@ -11,9 +11,19 @@ namespace MarketInventory.Infrastructure.Repositories
         {
         }
 
+        public Task DeleteAsync(Barkod barkod)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Barkod>> GetAktifBarkodlarAsync()
         {
             return await _dbSet.Where(b => b.AktifMi).ToListAsync();
+        }
+
+        public Task UpdateAsync(Barkod barkod)
+        {
+            throw new NotImplementedException();
         }
     }
 }

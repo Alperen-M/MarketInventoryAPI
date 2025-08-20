@@ -14,7 +14,7 @@ namespace MarketInventory.Infrastructure.Repositories
         public async Task<IEnumerable<Birim>> GetAllWithUrunAsync()
         {
             return await _dbSet
-             
+
                 .ToListAsync();
         }
     }

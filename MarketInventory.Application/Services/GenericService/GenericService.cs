@@ -1,4 +1,5 @@
-﻿using MarketInventory.Application.Services.Interfaces;
+﻿using MarketInventory.Application.Interfaces;
+using MarketInventory.Application.Services.Interfaces;
 using MarketInventory.Infrastructure.Repositories.Interfaces;
 
 namespace MarketInventory.Application.Services;
@@ -32,5 +33,10 @@ public class GenericService<T> : IGenericService<T> where T : class
     {
         _repository.Delete(entity);
         await _repository.SaveAsync();
+    }
+
+    Task<IEnumerable<T>> IGenericService<T>.GetAllAsync()
+    {
+        throw new NotImplementedException();
     }
 }

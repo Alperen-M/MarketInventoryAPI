@@ -11,6 +11,11 @@ namespace MarketInventory.Infrastructure.Repositories
         {
         }
 
+        public Task DeleteAsync(UrunFiyat entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<UrunFiyat>> GetAktifFiyatlarAsync()
         {
             return await _dbSet
@@ -18,6 +23,10 @@ namespace MarketInventory.Infrastructure.Repositories
                 .Include(f => f.Urun)
                 .ToListAsync();
         }
+
+        public Task UpdateAsync(UrunFiyat entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
-

@@ -48,5 +48,7 @@ namespace MarketInventory.Application.Services
             var all = await _repository.GetAllAsync();
             return all.Where(k => k.SilinmeTarihi == null);
         }
+
+       
     }
 }

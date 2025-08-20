@@ -54,6 +54,21 @@ namespace MarketInventory.Application.Services
             existing.Carpan = birim.Carpan;
             await _repository.UpdateAsync(existing);
         }
+
+        Task<Birim?> IBirimService.GetByNameAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<bool> IBirimService.IsNameUniqueAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<IEnumerable<Birim>> IBirimService.GetActiveBirimlerAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

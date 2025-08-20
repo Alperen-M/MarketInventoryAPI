@@ -1,6 +1,9 @@
-﻿using MarketInventory.Infrastructure.Data;
+﻿using MarketInventory.Domain.Entities;
+using MarketInventory.Infrastructure.Data;
 using MarketInventory.Infrastructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MarketInventory.Infrastructure.Repositories;
 
@@ -26,4 +29,19 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
     public void Delete(T entity) => _dbSet.Remove(entity);
 
     public async Task SaveAsync() => await _context.SaveChangesAsync();
+
+    public Task UpdateAsync(Birim existing)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateAsync(KullaniciTuru entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task DeleteAsync(KullaniciTuru entity)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -14,6 +14,3 @@ namespace MarketInventory.Infrastructure.Security
         public int ExpiresMinutes { get; set; }
     }
 }
-
-
-

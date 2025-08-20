@@ -36,4 +36,3 @@ namespace MarketInventory.Application.DTOs.UrunFiyat
         public int? UrunId { get; set; }
     }
 }
-

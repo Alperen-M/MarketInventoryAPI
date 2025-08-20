@@ -10,6 +10,7 @@ namespace MarketInventory.Application.Services.Interfaces
         Task<bool> IsEmailUniqueAsync(string email);
         Task<IEnumerable<Kullanici>> GetActiveKullanicilarAsync();
         Task<Kullanici?> LoginAsync(string email, string password);
+
     }
 
 

@@ -1,5 +1,7 @@
 ﻿using MarketInventory.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Reflection.Emit;
 
 namespace MarketInventory.Infrastructure.Data
 {
@@ -124,11 +126,6 @@ namespace MarketInventory.Infrastructure.Data
                 .WithMany()
                 .HasForeignKey(s => s.CreatedById)
                 .OnDelete(DeleteBehavior.Restrict);
-
-            // NOT: Soft delete global filters can create weird EF warnings when navigation is required.
-            // Eğer soft-delete istiyorsan, ya tüm ilgili tiplere aynı query filter'ı ekle ya da
-            // soft-delete'i repository seviyesinde ele al.
-            // Örnek (dikkatli kullan): modelBuilder.Entity<Urun>().HasQueryFilter(u => u.SilinmeTarihi == null);
         }
     }
 }

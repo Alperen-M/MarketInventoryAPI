@@ -1,4 +1,6 @@
-﻿namespace MarketInventory.Infrastructure.Repositories.Interfaces;
+﻿using MarketInventory.Domain.Entities;
+
+namespace MarketInventory.Infrastructure.Repositories.Interfaces;
 
 public interface IGenericRepository<T> where T : class
 {
@@ -8,4 +10,7 @@ public interface IGenericRepository<T> where T : class
     void Update(T entity);
     void Delete(T entity);
     Task SaveAsync();
+    Task UpdateAsync(Birim existing);
+    Task UpdateAsync(KullaniciTuru entity);
+    Task DeleteAsync(KullaniciTuru entity);
 }

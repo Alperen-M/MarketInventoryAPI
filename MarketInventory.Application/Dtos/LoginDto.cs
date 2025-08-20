@@ -9,4 +9,3 @@ namespace MarketInventory.Application.Dtos
         public string Password { get; set; } = string.Empty;
     }
 }
-

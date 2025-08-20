@@ -14,4 +14,3 @@ namespace MarketInventory.Application.Services.Interfaces
         Task DeleteAsync(int id);
     }
 }
-

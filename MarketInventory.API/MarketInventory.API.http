@@ -1,0 +1,6 @@
+@MarketInventory.API_HostAddress = http://localhost:5160
+
+GET {{MarketInventory.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
