@@ -104,7 +104,8 @@ namespace MarketInventory.Application.Services
                 Id = entity.Id,
                 AktifMi = entity.AktifMi,
                 BaslangicTarihi = entity.BaslangicTarihi,
-                SonTarih = (DateTime)entity.SonTarih,
+                // Hata veren casting işlemi kaldırıldı
+                SonTarih = entity.SonTarih,
                 Fiyat = entity.Fiyat,
                 UrunId = entity.UrunId,
                 UrunAdi = entity.Urun?.Ad

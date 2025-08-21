@@ -13,9 +13,12 @@ public class GenericService<T> : IGenericService<T> where T : class
         _repository = repository;
     }
 
-    public async Task<List<T>> GetAllAsync() => await _repository.GetAllAsync();
+    public async Task<IEnumerable<T>> GetAllAsync()
+    => await _repository.GetAllAsync();
 
-    public async Task<T?> GetByIdAsync(int id) => await _repository.GetByIdAsync(id);
+
+    public async Task<T?> GetByIdAsync(int id)
+           => await _repository.GetByIdAsync(id);
 
     public async Task AddAsync(T entity)
     {
@@ -35,8 +38,5 @@ public class GenericService<T> : IGenericService<T> where T : class
         await _repository.SaveAsync();
     }
 
-    Task<IEnumerable<T>> IGenericService<T>.GetAllAsync()
-    {
-        throw new NotImplementedException();
-    }
+    
 }

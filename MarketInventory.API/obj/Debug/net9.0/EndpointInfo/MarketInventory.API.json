@@ -1043,27 +1043,27 @@
       "BarkodCreateDto": {
         "type": "object",
         "properties": {
-          "kod": {
+          "Kod": {
             "type": "string",
             "nullable": true
           },
-          "urunId": {
+          "UrunId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "urunBirimId": {
+          "UrunBirimId": {
             "type": "integer",
             "format": "int32"
           },
-          "aktifMi": {
+          "AktifMi": {
             "type": "boolean"
           },
-          "createdById": {
+          "CreatedById": {
             "type": "integer",
             "format": "int32"
           },
-          "urunBirimi": {
+          "UrunBirimi": {
             "type": "string",
             "nullable": true
           }
@@ -1073,24 +1073,24 @@
       "BarkodUpdateDto": {
         "type": "object",
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "kod": {
+          "Kod": {
             "type": "string",
             "nullable": true
           },
-          "urunId": {
+          "UrunId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "birimId": {
+          "BirimId": {
             "type": "integer",
             "format": "int32"
           },
-          "aktifMi": {
+          "AktifMi": {
             "type": "boolean"
           }
         },
@@ -1099,11 +1099,11 @@
       "BirimCreateDto": {
         "type": "object",
         "properties": {
-          "ad": {
+          "Ad": {
             "type": "string",
             "nullable": true
           },
-          "carpan": {
+          "Carpan": {
             "type": "number",
             "format": "double"
           }
@@ -1113,15 +1113,15 @@
       "BirimUpdateDto": {
         "type": "object",
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "ad": {
+          "Ad": {
             "type": "string",
             "nullable": true
           },
-          "carpan": {
+          "Carpan": {
             "type": "number",
             "format": "double"
           }
@@ -1131,7 +1131,7 @@
       "CreateKullaniciTuruDto": {
         "type": "object",
         "properties": {
-          "ad": {
+          "Ad": {
             "type": "string",
             "nullable": true
           }
@@ -1141,22 +1141,23 @@
       "CreateUrunFiyatDto": {
         "type": "object",
         "properties": {
-          "aktifMi": {
+          "AktifMi": {
             "type": "boolean"
           },
-          "baslangicTarihi": {
+          "BaslangicTarihi": {
             "type": "string",
             "format": "date-time"
           },
-          "sonTarih": {
+          "SonTarih": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
-          "fiyat": {
+          "Fiyat": {
             "type": "number",
             "format": "double"
           },
-          "urunId": {
+          "UrunId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -1167,48 +1168,48 @@
       "Kullanici": {
         "type": "object",
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "kullaniciAdi": {
+          "KullaniciAdi": {
             "type": "string",
             "nullable": true
           },
-          "sifre": {
+          "Sifre": {
             "type": "string",
             "nullable": true
           },
-          "kayitTarihi": {
+          "KayitTarihi": {
             "type": "string",
             "format": "date-time"
           },
-          "guncellemeTarihi": {
+          "GuncellemeTarihi": {
             "type": "string",
             "format": "date-time",
             "nullable": true
           },
-          "silinmeTarihi": {
+          "SilinmeTarihi": {
             "type": "string",
             "format": "date-time",
             "nullable": true
           },
-          "kullaniciTuruId": {
+          "KullaniciTuruId": {
             "type": "integer",
             "format": "int32"
           },
-          "kullaniciTuru": {
+          "KullaniciTuru": {
             "$ref": "#/components/schemas/KullaniciTuru"
           },
-          "createdById": {
+          "CreatedById": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "createdByUser": {
+          "CreatedByUser": {
             "$ref": "#/components/schemas/Kullanici"
           },
-          "createdUsers": {
+          "CreatedUsers": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Kullanici"
@@ -1221,15 +1222,15 @@
       "KullaniciTuru": {
         "type": "object",
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "ad": {
+          "Ad": {
             "type": "string",
             "nullable": true
           },
-          "kullanicilar": {
+          "Kullanicilar": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Kullanici"
@@ -1242,11 +1243,11 @@
       "LoginDto": {
         "type": "object",
         "properties": {
-          "kullaniciAdi": {
+          "KullaniciAdi": {
             "type": "string",
             "nullable": true
           },
-          "password": {
+          "Password": {
             "type": "string",
             "nullable": true
           }
@@ -1256,24 +1257,24 @@
       "StokHareketiCreateDto": {
         "type": "object",
         "properties": {
-          "urunId": {
+          "UrunId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "hareketTuru": {
+          "HareketTuru": {
             "type": "string",
             "nullable": true
           },
-          "birimId": {
+          "BirimId": {
             "type": "integer",
             "format": "int32"
           },
-          "miktar": {
+          "Miktar": {
             "type": "integer",
             "format": "int32"
           },
-          "createdById": {
+          "CreatedById": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -1284,28 +1285,28 @@
       "StokHareketiUpdateDto": {
         "type": "object",
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "urunId": {
+          "UrunId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "hareketTuru": {
+          "HareketTuru": {
             "type": "string",
             "nullable": true
           },
-          "birimId": {
+          "BirimId": {
             "type": "integer",
             "format": "int32"
           },
-          "miktar": {
+          "Miktar": {
             "type": "integer",
             "format": "int32"
           },
-          "createdById": {
+          "CreatedById": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -1316,26 +1317,27 @@
       "UpdateUrunFiyatDto": {
         "type": "object",
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "aktifMi": {
+          "AktifMi": {
             "type": "boolean"
           },
-          "baslangicTarihi": {
+          "BaslangicTarihi": {
             "type": "string",
             "format": "date-time"
           },
-          "sonTarih": {
+          "SonTarih": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
-          "fiyat": {
+          "Fiyat": {
             "type": "number",
             "format": "double"
           },
-          "urunId": {
+          "UrunId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -1346,19 +1348,19 @@
       "UrunCreateDto": {
         "type": "object",
         "properties": {
-          "ad": {
+          "Ad": {
             "type": "string",
             "nullable": true
           },
-          "tur": {
+          "Tur": {
             "type": "string",
             "nullable": true
           },
-          "birimId": {
+          "BirimId": {
             "type": "integer",
             "format": "int32"
           },
-          "createdById": {
+          "CreatedById": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -1369,23 +1371,23 @@
       "UrunUpdateDto": {
         "type": "object",
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "ad": {
+          "Ad": {
             "type": "string",
             "nullable": true
           },
-          "tur": {
+          "Tur": {
             "type": "string",
             "nullable": true
           },
-          "birimId": {
+          "BirimId": {
             "type": "integer",
             "format": "int32"
           },
-          "createdById": {
+          "CreatedById": {
             "type": "integer",
             "format": "int32",
             "nullable": true

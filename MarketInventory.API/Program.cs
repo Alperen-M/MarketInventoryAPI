@@ -24,11 +24,6 @@ var jwt = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>()!;
 // JWT Auth
 Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
 
-
-var jwtKey = "bAafd@A7d9#@F4*V!LHZs#ebKQrkE6pad2f3kj34c3dXy@"; // minimum 16 karakter
-var issuer = "MyAPI";
-var audience = "MyAPIUsers";
-
 // Authentication ekle
 builder.Services.AddAuthentication(options =>
 {
@@ -43,9 +38,9 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = "yourdomain.com",
-        ValidAudience = "yourdomain.com",
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+        ValidIssuer = jwt.Issuer,
+        ValidAudience = jwt.Audience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt.Key))
     };
 
     options.RequireHttpsMetadata = false;
@@ -90,10 +85,16 @@ builder.Services.AddScoped<IBirimService, BirimService>();
 builder.Services.AddScoped<IKullaniciService, KullaniciService>();
 builder.Services.AddScoped<IKullaniciTuruService, KullaniciTuruService>();
 builder.Services.AddScoped<IStokHareketiService, StokHareketiService>();
-builder.Services.AddScoped<IUrunService, UrunService>();
-builder.Services.AddScoped<IUrunFiyatService, UrunFiyatService>();
+builder.Services.AddScoped<IUrunService, UrunService>(); // Düzeltme yapýldý
+builder.Services.AddScoped<IUrunFiyatService, UrunFiyatService>(); // Düzeltme yapýldý
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+        options.JsonSerializerOptions.PropertyNamingPolicy = null; // Opsiyonel: Eðer C# property isimlerini aynen kullanmak isterseniz.
+    });
+
 
 // Swagger + JWT
 builder.Services.AddEndpointsApiExplorer();

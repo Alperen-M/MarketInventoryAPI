@@ -20,7 +20,6 @@ namespace MarketInventory.Application.Services
         public async Task<IEnumerable<UrunReadDto>> GetAllAsync()
         {
             return await _context.Urunler
-                .Include(u => u.Birim)
                 .Select(u => new UrunReadDto
                 {
                     Id = u.Id,
@@ -47,7 +46,7 @@ namespace MarketInventory.Application.Services
                 Id = entity.Id,
                 Ad = entity.Ad,
                 Tur = entity.Tur,
-                BirimId = entity.BirimId,
+                BirimId = entity.Birim?.Id ?? entity.BirimId,
                 BirimAdi = entity.Birim?.Ad,
                 KayitTarihi = entity.KayitTarihi,
                 GuncellemeTarihi = entity.GuncellemeTarihi

@@ -11,7 +11,7 @@ namespace MarketInventory.Application.DTOs.UrunFiyat
         public int Id { get; set; }
         public bool AktifMi { get; set; }
         public DateTime BaslangicTarihi { get; set; }
-        public DateTime SonTarih { get; set; }
+        public DateTime? SonTarih { get; set; }
         public decimal Fiyat { get; set; }
         public int? UrunId { get; set; }
         public string? UrunAdi { get; set; }
@@ -21,7 +21,7 @@ namespace MarketInventory.Application.DTOs.UrunFiyat
     {
         public bool AktifMi { get; set; } = true;
         public DateTime BaslangicTarihi { get; set; }
-        public DateTime SonTarih { get; set; }
+        public DateTime? SonTarih { get; set; }
         public decimal Fiyat { get; set; }
         public int? UrunId { get; set; }
     }
@@ -31,7 +31,7 @@ namespace MarketInventory.Application.DTOs.UrunFiyat
         public int Id { get; set; }
         public bool AktifMi { get; set; }
         public DateTime BaslangicTarihi { get; set; }
-        public DateTime SonTarih { get; set; }
+        public DateTime? SonTarih { get; set; }
         public decimal Fiyat { get; set; }
         public int? UrunId { get; set; }
     }

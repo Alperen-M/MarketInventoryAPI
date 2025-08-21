@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="8.6.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="Moq.EntityFrameworkCore" Version="9.0.0.5" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MarketInventory.API\MarketInventory.API.csproj" />
+    <ProjectReference Include="..\MarketInventory.Application\MarketInventory.Application.csproj" />
+    <ProjectReference Include="..\MarketInventory.Domain\MarketInventory.Domain.csproj" />
+    <ProjectReference Include="..\MarketInventory.Infrastructure\MarketInventory.Infrastructure.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+	
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+	
+		
+	</ItemGroup>
+
+</Project>
