@@ -66,10 +66,21 @@ namespace MarketInventory.Application.Services
 
             _context.Urunler.Add(entity);
             await _context.SaveChangesAsync();
-
-            return await GetByIdAsync(entity.Id) ?? throw new Exception("Kayıt eklenemedi.");
+            return MapToDto(entity);
         }
+        private UrunReadDto MapToDto(Urun entity)
+        {
+            var birimAdi = _context.Birimler.FirstOrDefault(b => b.Id == entity.BirimId)?.Ad;
 
+            return new UrunReadDto
+            {
+                Id = entity.Id,
+                Ad = entity.Ad,
+                Tur = entity.Tur,
+                BirimId = entity.BirimId,
+                BirimAdi = birimAdi ?? string.Empty 
+            };
+        }
         public async Task<bool> UpdateAsync(int id, UrunUpdateDto dto)
         {
             var entity = await _context.Urunler.FindAsync(id);

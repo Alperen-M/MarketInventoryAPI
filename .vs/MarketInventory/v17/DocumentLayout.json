@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C76FD8AF-633B-4AD0-B681-02C322DCA25C}|MarketInventory.UnitTests\\MarketInventory.UnitTests.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventory\\marketinventory\\marketinventory.unittests\\tests\\urunservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C76FD8AF-633B-4AD0-B681-02C322DCA25C}|MarketInventory.UnitTests\\MarketInventory.UnitTests.csproj|solutionrelative:marketinventory.unittests\\tests\\urunservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C76FD8AF-633B-4AD0-B681-02C322DCA25C}|MarketInventory.UnitTests\\MarketInventory.UnitTests.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventory\\marketinventory\\marketinventory.unittests\\tests\\barkodservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C76FD8AF-633B-4AD0-B681-02C322DCA25C}|MarketInventory.UnitTests\\MarketInventory.UnitTests.csproj|solutionrelative:marketinventory.unittests\\tests\\barkodservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B98C8160-EE56-40FC-B18C-7E03DE2B1531}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventory\\marketinventory\\marketinventory.infrastructure\\repositories\\barkodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B98C8160-EE56-40FC-B18C-7E03DE2B1531}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|solutionrelative:marketinventory.infrastructure\\repositories\\barkodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B98C8160-EE56-40FC-B18C-7E03DE2B1531}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventory\\marketinventory\\marketinventory.infrastructure\\repositories\\interfaces\\ibarkodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B98C8160-EE56-40FC-B18C-7E03DE2B1531}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|solutionrelative:marketinventory.infrastructure\\repositories\\interfaces\\ibarkodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D20DBE-FC58-4E83-8EE9-0CC8C0A5DCEC}|MarketInventory.Application\\MarketInventory.Application.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventory\\marketinventory\\marketinventory.application\\services\\barkodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D20DBE-FC58-4E83-8EE9-0CC8C0A5DCEC}|MarketInventory.Application\\MarketInventory.Application.csproj|solutionrelative:marketinventory.application\\services\\barkodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B98C8160-EE56-40FC-B18C-7E03DE2B1531}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|c:\\users\\alperen\\desktop\\okul\\marketinventory\\marketinventory\\marketinventory.infrastructure\\context\\marketdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B98C8160-EE56-40FC-B18C-7E03DE2B1531}|MarketInventory.Infrastructure\\MarketInventory.Infrastructure.csproj|solutionrelative:marketinventory.infrastructure\\context\\marketdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UrunServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\MarketInventory.UnitTests\\Tests\\UrunServiceTests.cs",
-              "RelativeDocumentMoniker": "MarketInventory.UnitTests\\Tests\\UrunServiceTests.cs",
-              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\MarketInventory.UnitTests\\Tests\\UrunServiceTests.cs",
-              "RelativeToolTip": "MarketInventory.UnitTests\\Tests\\UrunServiceTests.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "IBarkodRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\MarketInventory.Infrastructure\\Repositories\\Interfaces\\IBarkodRepository.cs",
+              "RelativeDocumentMoniker": "MarketInventory.Infrastructure\\Repositories\\Interfaces\\IBarkodRepository.cs",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\MarketInventory.Infrastructure\\Repositories\\Interfaces\\IBarkodRepository.cs",
+              "RelativeToolTip": "MarketInventory.Infrastructure\\Repositories\\Interfaces\\IBarkodRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T13:38:31.008Z",
+              "WhenOpened": "2025-08-25T13:36:04.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BarkodRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\MarketInventory.Infrastructure\\Repositories\\BarkodRepository.cs",
+              "RelativeDocumentMoniker": "MarketInventory.Infrastructure\\Repositories\\BarkodRepository.cs",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\MarketInventory.Infrastructure\\Repositories\\BarkodRepository.cs",
+              "RelativeToolTip": "MarketInventory.Infrastructure\\Repositories\\BarkodRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:24:03.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BarkodService.cs",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\MarketInventory.Application\\Services\\BarkodService.cs",
+              "RelativeDocumentMoniker": "MarketInventory.Application\\Services\\BarkodService.cs",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\MarketInventory.Application\\Services\\BarkodService.cs",
+              "RelativeToolTip": "MarketInventory.Application\\Services\\BarkodService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:23:29.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BarkodServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\MarketInventory.UnitTests\\Tests\\BarkodServiceTests.cs",
+              "RelativeDocumentMoniker": "MarketInventory.UnitTests\\Tests\\BarkodServiceTests.cs",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\MarketInventory.UnitTests\\Tests\\BarkodServiceTests.cs",
+              "RelativeToolTip": "MarketInventory.UnitTests\\Tests\\BarkodServiceTests.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAwGAAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:23:22.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MarketDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\MarketInventory.Infrastructure\\Context\\MarketDbContext.cs",
+              "RelativeDocumentMoniker": "MarketInventory.Infrastructure\\Context\\MarketDbContext.cs",
+              "ToolTip": "C:\\Users\\ALPEREN\\Desktop\\okul\\MarketInventory\\MarketInventory\\MarketInventory.Infrastructure\\Context\\MarketDbContext.cs",
+              "RelativeToolTip": "MarketInventory.Infrastructure\\Context\\MarketDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T08:24:22.339Z",
               "EditorCaption": ""
             }
           ]

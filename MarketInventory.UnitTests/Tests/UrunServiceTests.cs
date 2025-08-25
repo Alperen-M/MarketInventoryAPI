@@ -2,6 +2,7 @@
 using MarketInventory.Application.DTOs;
 using MarketInventory.Application.Services;
 using MarketInventory.Domain.Entities;
+using MarketInventory.Infrastructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using Moq.EntityFrameworkCore;
@@ -89,8 +90,162 @@ namespace MarketInventory.Tests
             Assert.Equal("Kg", result.BirimAdi);
         }
 
-    }
+        [Fact]
+        public async Task AddAsync_ShouldAddEntityAndReturnDto_WhenValidInput()
+        {
+            //Arrange
+            var urunCreateDto = new UrunCreateDto
+            {
+                Ad = "Muz",
+                Tur = "Meyve",
+                BirimId = 2
+            };
+            var birim = new Birim { Id = 2, Ad = "Kg" };
 
+            //Mock Dbset<Urun>
+            var urunler = new List<Urun>();
+            var mockContext = new Mock<MarketDbContext>(new DbContextOptions<MarketDbContext> { });
+            mockContext.Setup(c => c.Urunler).ReturnsDbSet(urunler);
+            mockContext.Setup(c => c.Birimler).ReturnsDbSet(new List<Birim> { birim });
+            mockContext.Setup(c => c.SaveChangesAsync(It.IsAny<CancellationToken>()))
+                .ReturnsAsync(1);
+            var service = new UrunService(mockContext.Object);
+
+            //Act
+            var result = await service.AddAsync(urunCreateDto);
+
+            //Assert
+            Assert.NotNull(result);
+            Assert.Equal("Muz", result.Ad);
+            Assert.Equal("Meyve", result.Tur);
+            Assert.Equal(2, result.BirimId);
+            Assert.Equal("Kg", result.BirimAdi);
+
+
+        }
+
+        [Fact]
+        public async Task UpdateAsync_ShouldUpdateEntity_WhenEntityExists()
+        {
+            // Arrange
+            // Mock'lanacak veritabanı bağlamının parametresi için bir seçenek nesnesi oluşturuyoruz.
+            var dbContextOptions = new DbContextOptions<MarketDbContext>();
+
+            // Test için bir Urun nesnesi oluşturuyoruz.
+            var urun = new Urun
+            {
+                Id = 1,
+                Ad = "Elma",
+                Tur = "Meyve",
+                BirimId = 1,
+                CreatedById = 10,
+                KayitTarihi = DateTime.UtcNow
+            };
+
+            // DbSet'i taklit etmek için bir Mock nesnesi oluşturuyoruz.
+            var mockUrunlerDbSet = new Mock<DbSet<Urun>>();
+
+            mockUrunlerDbSet.Setup(m => m.FindAsync(1)).ReturnsAsync(urun);
+
+            var mockContext = new Mock<MarketDbContext>(dbContextOptions);
+
+            mockContext.Setup(c => c.Urunler).Returns(mockUrunlerDbSet.Object);
+            mockContext.Setup(c => c.SaveChangesAsync(It.IsAny<CancellationToken>()))
+                       .ReturnsAsync(1);
+
+            var service = new UrunService(mockContext.Object);
+
+            var dto = new UrunUpdateDto
+            {
+                Ad = "Armut",
+                Tur = "Meyve",
+                BirimId = 2,
+                CreatedById = 20
+            };
+
+            // Act
+            var result = await service.UpdateAsync(1, dto);
+
+            // Assert
+            Assert.True(result);
+
+            Assert.Equal("Armut", urun.Ad);
+            Assert.Equal(2, urun.BirimId);
+            Assert.Equal(20, urun.CreatedById);
+        }
+
+      
+        private Mock<MarketDbContext> SetupMockDbContext(Urun urun)
+        {
+            var dbContextOptions = new DbContextOptions<MarketDbContext>();
+            var mockContext = new Mock<MarketDbContext>(dbContextOptions);
+
+            var mockUrunlerDbSet = new Mock<DbSet<Urun>>();
+
+            if (urun != null)
+            {
+                mockUrunlerDbSet.Setup(m => m.FindAsync(urun.Id)).ReturnsAsync(urun);
+            }
+            else
+            {
+                mockUrunlerDbSet.Setup(m => m.FindAsync(It.IsAny<int>())).ReturnsAsync((Urun)null);
+            }
+
+            mockContext.Setup(c => c.Urunler).Returns(mockUrunlerDbSet.Object);
+
+            return mockContext;
+        }
+
+        [Fact]
+        public async Task DeleteAsync_ShouldReturnTrue_WhenEntityExists()
+        {
+            // Arrange
+            var urun = new Urun { Id = 1, Ad = "Elma", Tur = "Meyve", BirimId = 1, CreatedById = 10, KayitTarihi = DateTime.UtcNow };
+
+           
+            var mockContext = SetupMockDbContext(urun);
+
+           
+            mockContext.Setup(c => c.SaveChangesAsync(It.IsAny<CancellationToken>()))
+                       .ReturnsAsync(1);
+            
+            var service = new UrunService(mockContext.Object);
+
+            // Act
+            var result = await service.DeleteAsync(1);
+
+            // Assert
+            Assert.True(result);
+
+            mockContext.Verify(c => c.Urunler.Remove(urun), Times.Once);
+
+           
+            mockContext.Verify(c => c.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
+        }
+
+        [Fact]
+        public async Task DeleteAsync_ShouldReturnFalse_WhenEntityDoesNotExist()
+        {
+            // Arrange
+            var mockContext = SetupMockDbContext(null);
+
+         
+            var service = new UrunService(mockContext.Object);
+
+            // Act
+            // Var olmayan bir ürün için silme işlemini gerçekleştiriyoruz.
+            var result = await service.DeleteAsync(99); // Var olmayan bir Id
+
+            // Assert
+            Assert.False(result);
+
+            mockContext.Verify(c => c.Urunler.Remove(It.IsAny<Urun>()), Times.Never);
+
+           
+            mockContext.Verify(c => c.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+    }
 }
 
 

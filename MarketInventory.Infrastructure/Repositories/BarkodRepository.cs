@@ -11,6 +11,13 @@ namespace MarketInventory.Infrastructure.Repositories
         {
         }
 
+        public async Task<bool> BarkodExistsAsync(string barkodKod)
+        {
+            // Veritabanında belirtilen barkod koduna sahip herhangi bir öğenin olup olmadığını kontrol eder.
+            // Bu metot, AddAsync metodunda kullanılacak iş mantığını destekler.
+            return await _dbSet.AnyAsync(b => b.Kod == barkodKod);
+        }
+
         public Task DeleteAsync(Barkod barkod)
         {
             throw new NotImplementedException();
@@ -18,6 +25,7 @@ namespace MarketInventory.Infrastructure.Repositories
 
         public async Task<IEnumerable<Barkod>> GetAktifBarkodlarAsync()
         {
+            // Sadece aktif olan barkodları filtreler ve asenkron olarak döner.
             return await _dbSet.Where(b => b.AktifMi).ToListAsync();
         }
 

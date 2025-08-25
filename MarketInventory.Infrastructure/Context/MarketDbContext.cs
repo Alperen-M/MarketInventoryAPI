@@ -11,12 +11,12 @@ namespace MarketInventory.Infrastructure.Data
             : base(options) { }
 
         public virtual DbSet<Urun> Urunler { get; set; } = null!;
-        public DbSet<Birim> Birimler { get; set; } = null!;
-        public DbSet<Barkod> Barkodlar { get; set; } = null!;
-        public DbSet<UrunFiyat> UrunFiyatlar { get; set; } = null!;
-        public DbSet<StokHareketi> StokHareketleri { get; set; } = null!;
-        public DbSet<Kullanici> Kullanicilar { get; set; } = null!;
-        public DbSet<KullaniciTuru> KullaniciTurleri { get; set; } = null!;
+        public virtual DbSet<Birim> Birimler { get; set; } = null!;
+        public virtual DbSet<Barkod> Barkodlar { get; set; } = null!;
+        public virtual DbSet<UrunFiyat> UrunFiyatlar { get; set; } = null!;
+        public virtual DbSet<StokHareketi> StokHareketleri { get; set; } = null!;
+        public virtual DbSet<Kullanici> Kullanicilar { get; set; } = null!;
+        public virtual DbSet<KullaniciTuru> KullaniciTurleri { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
