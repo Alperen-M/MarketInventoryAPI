@@ -6,6 +6,7 @@
         public string Sifre { get; set; } = string.Empty;
         public int KullaniciTuruId { get; set; }
         public int CreatedById { get; set; }
+        
     }
 
     public class KullaniciUpdateDto
