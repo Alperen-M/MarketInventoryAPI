@@ -12,7 +12,6 @@ namespace MarketInventory.API.Controllers
     public class BarkodController : ControllerBase
     {
         private readonly IBarkodService _barkodService;
-
         public BarkodController(IBarkodService barkodService)
         {
             _barkodService = barkodService;
