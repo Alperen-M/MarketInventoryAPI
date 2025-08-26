@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 public class UrunFiyatController : ControllerBase
 {
     private readonly IUrunFiyatService _service;
-
     public UrunFiyatController(IUrunFiyatService service)
     {
         _service = service;
