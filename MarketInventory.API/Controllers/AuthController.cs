@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 public class AuthController : ControllerBase
 {
     private readonly IKullaniciService _kullaniciService;
+    
     private readonly IJwtTokenService _jwtTokenService;
 
     public AuthController(IKullaniciService kullaniciService, IJwtTokenService jwtTokenService)
