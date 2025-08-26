@@ -7,6 +7,7 @@
         public int BirimId { get; set; }
         public int Miktar { get; set; }
         public int? CreatedById { get; set; }
+        
     }
 
     public class StokHareketiUpdateDto
