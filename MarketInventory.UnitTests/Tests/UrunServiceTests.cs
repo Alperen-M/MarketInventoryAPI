@@ -14,25 +14,31 @@ namespace MarketInventory.Tests
 
     public class UrunServiceMockTests
     {
+        // Facr -> Parametresiz bir test metodudur, koştuğunda tek seferlik sabit bir senaryoyu test eder.
         [Fact]
         public async Task GetAllAsync_ShouldReturn_MockedUrunler()
         {
             // Arrange
+            //Fake (mock) data hazırlanıyor.
+            //Urun nesneleri normalde DB'den gelir , ama testte veritabanı kullanmak istemiyoruz-> elimizle 2 tane Urun nesnesi oluşturduk.
             var urunler = new List<Urun>
         {
             new Urun { Id = 1, Ad = "Elma", Tur = "Meyve", Birim = new Birim { Id = 1, Ad = "Kg" } },
             new Urun { Id = 2, Ad = "Armut", Tur = "Meyve", Birim = new Birim { Id = 1, Ad = "Kg" } }
         };
-
+            //MarketDbContext'in mock(sahte) versiyonunu oluşturuyoruz.
             var mockContext = new Mock<MarketDbContext>(new DbContextOptions<MarketDbContext>());
+            //Urunler DbSeti'ne erişildiğinde bizim verdiğimiz urunler listesi dönsün istiyoruz.
             mockContext.Setup(c => c.Urunler).ReturnsDbSet(urunler);
-
+            //Mock context'i kullanarak gerçek UrunService nesnesini oluşturuyoruz.
+            //Artık service.GetAllAsync() çağırısı yapıldığında, gerçek DB yerine sahte urunler listesini dönecek.
             var service = new UrunService(mockContext.Object);
 
             // Act
+            //Test edilen metodu çağırıyoruz. Bu çağrı arka planda mock'tan gelen urunler listesine bağlanacak.
             var result = await service.GetAllAsync();
 
-            // Assert
+            // Assert(Doğrulama kısmı)
             Assert.NotNull(result);
             Assert.Equal(2, result.Count());
         }
@@ -90,6 +96,39 @@ namespace MarketInventory.Tests
             Assert.Equal("Kg", result.BirimAdi);
         }
 
+        [Theory]
+        [InlineData(1, "Elma", "Meyve", 2, "Kg")]
+        [InlineData(2, "Armut", "Meyve", 2, "Kg")]
+        [InlineData(3, "Kiraz", "Meyve", 2, "Kg")]
+        public async Task GetByIdAsync_ShouldReturnEntity_WhenEntityExists_WithParameters(
+        int id, string expectedAd, string expectedTur, int expectedBirimId, string expectedBirimAdi)
+        {
+            // Arrange
+            var urunler = new List<Urun>
+    {
+        new Urun { Id = 1, Ad = "Elma", Tur = "Meyve", Birim = new Birim { Id = 2, Ad = "Kg" }},
+        new Urun { Id = 2, Ad = "Armut", Tur = "Meyve", Birim = new Birim { Id = 2, Ad = "Kg" }},
+        new Urun { Id = 3, Ad = "Kiraz", Tur = "Meyve", Birim = new Birim { Id = 2, Ad = "Kg" }}
+    };
+
+            var mockContext = new Mock<MarketDbContext>(new DbContextOptions<MarketDbContext>());
+            mockContext.Setup(c => c.Urunler).ReturnsDbSet(urunler);
+
+            var service = new UrunService(mockContext.Object);
+
+            // Act
+            var result = await service.GetByIdAsync(id);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(id, result!.Id);
+            Assert.Equal(expectedAd, result.Ad);
+            Assert.Equal(expectedTur, result.Tur);
+            Assert.Equal(expectedBirimId, result.BirimId);
+            Assert.Equal(expectedBirimAdi, result.BirimAdi);
+        }
+
+
         [Fact]
         public async Task AddAsync_ShouldAddEntityAndReturnDto_WhenValidInput()
         {
@@ -104,11 +143,13 @@ namespace MarketInventory.Tests
 
             //Mock Dbset<Urun>
             var urunler = new List<Urun>();
+
             var mockContext = new Mock<MarketDbContext>(new DbContextOptions<MarketDbContext> { });
             mockContext.Setup(c => c.Urunler).ReturnsDbSet(urunler);
             mockContext.Setup(c => c.Birimler).ReturnsDbSet(new List<Birim> { birim });
             mockContext.Setup(c => c.SaveChangesAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(1);
+
             var service = new UrunService(mockContext.Object);
 
             //Act
@@ -121,7 +162,8 @@ namespace MarketInventory.Tests
             Assert.Equal(2, result.BirimId);
             Assert.Equal("Kg", result.BirimAdi);
 
-
+            //result'ın sonunda neden ! kullanılır.
+            //kodları chate sor kendin test yaz
         }
 
         [Fact]

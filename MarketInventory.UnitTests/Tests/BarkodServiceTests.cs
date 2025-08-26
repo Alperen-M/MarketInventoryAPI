@@ -64,8 +64,9 @@ namespace MarketInventory.Tests
             var barkod = new Barkod { Kod = "1234567890123" };
             var mockRepo = new Mock<IBarkodRepository>();
 
-            // Doğrulama için kullanılacak olan BarkodExistsAsync metodunu false dönecek şekilde ayarlıyoruz.
-            mockRepo.Setup(r => r.BarkodExistsAsync(barkod.Kod)).ReturnsAsync(false);
+            // Servisin içindeki BarkodExistsAsync metodu GetAllAsync'i çağırdığı için,
+            // boş bir liste dönmesini mockluyoruz. Bu sayede BarkodExistsAsync false dönecektir.
+            mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(new List<Barkod>());
 
             // AddAsync metodunu çağrıldığında hiçbir şey yapmasını taklit ediyoruz.
             mockRepo.Setup(r => r.AddAsync(It.IsAny<Barkod>()))
@@ -76,32 +77,39 @@ namespace MarketInventory.Tests
             // Act (Eylem)
             await service.AddAsync(barkod);
 
-            // Assert 
+            // Assert (Doğrulama)
+            // Servis içi BarkodExistsAsync metodunun çağırdığı GetAllAsync'in bir kez çağrıldığını doğrularız.
+            mockRepo.Verify(r => r.GetAllAsync(), Times.Once);
 
-            
+            // AddAsync metodunun doğru nesneyle bir kez çağrıldığını doğrularız.
+            mockRepo.Verify(r => r.AddAsync(barkod), Times.Once);
         }
 
         [Fact]
         public async Task AddAsync_ShouldThrowException_WhenBarkodExists()
         {
             // Arrange (Hazırlık)
-            var barkod = new Barkod { Kod = "1234567890123" };
+            var existingBarkod = new Barkod { Kod = "1234567890123" };
+            var newBarkod = new Barkod { Kod = "1234567890123" }; // Aynı koda sahip nesne
+
             var mockRepo = new Mock<IBarkodRepository>();
 
-            // Mock'u herhangi bir string değeri için true dönecek şekilde ayarlıyoruz.
-            mockRepo.Setup(r => r.BarkodExistsAsync(It.IsAny<string>())).ReturnsAsync(true);
+            // Servisin içindeki BarkodExistsAsync metodunun true dönmesi için,
+            // GetAllAsync'in içinde mevcut barkodun bulunduğu bir liste dönmesini mockluyoruz.
+            mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(new List<Barkod> { existingBarkod });
 
             var service = new BarkodService(mockRepo.Object);
 
             // Act & Assert (Eylem ve Doğrulama)
-            var exception = await Assert.ThrowsAsync<InvalidOperationException>(() => service.AddAsync(barkod));
+            // Assert.ThrowsAsync kullanarak, beklenen InvalidOperationException hatasının fırlatıldığını doğrularız.
+            var exception = await Assert.ThrowsAsync<InvalidOperationException>(() => service.AddAsync(newBarkod));
 
             Assert.Equal("Bu barkod zaten mevcut.", exception.Message);
 
-            // BarkodExistsAsync metodunun herhangi bir string ile bir kez çağrıldığını doğrularız.
-            mockRepo.Verify(r => r.BarkodExistsAsync(It.IsAny<string>()), Times.Once);
+            // Servis içi BarkodExistsAsync metodunun çağırdığı GetAllAsync'in bir kez çağrıldığını doğrularız.
+            mockRepo.Verify(r => r.GetAllAsync(), Times.Once);
 
-            // AddAsync metodunun hiçbir zaman çağrılmadığını doğrularız.
+            // Önemli: Barkod mevcut olduğu için AddAsync metodunun hiçbir zaman çağrılmadığını doğrularız.
             mockRepo.Verify(r => r.AddAsync(It.IsAny<Barkod>()), Times.Never);
         }
 
@@ -149,6 +157,136 @@ namespace MarketInventory.Tests
             // Assert (Doğrulama)
             // Repository'deki UpdateAsync metodunun doğru nesneyle tam olarak bir kez çağrıldığını doğrularız.
             mockRepo.Verify(r => r.UpdateAsync(barkod), Times.Once);
+        }
+        [Fact]
+        public async Task GetBarkodsByUrunIdAsync_ShouldReturnCorrectBarkods_WhenUrunIdExists()
+        {
+            // Arrange (Hazırlık)
+            var urunId = 1;
+
+            // Test için sahte bir barkod listesi oluşturuyoruz.
+            // Bazı barkodların UrunId'si beklenen değerle (1) eşleşirken, bazıları farklıdır.
+            var allBarkods = new List<Barkod>
+            {
+                new Barkod { Id = 1, UrunId = 1, Kod = "111" },
+                new Barkod { Id = 2, UrunId = 2, Kod = "222" }, // Yanlış UrunId
+                new Barkod { Id = 3, UrunId = 1, Kod = "333" },
+                new Barkod { Id = 4, UrunId = 3, Kod = "444" }  // Yanlış UrunId
+            };
+
+            var mockRepo = new Mock<IBarkodRepository>();
+
+            // Mock repository'nin GetAllAsync metodu çağrıldığında, yukarıdaki tüm listeyi dönmesini sağlıyoruz.
+            mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(allBarkods);
+
+            var service = new BarkodService(mockRepo.Object);
+
+            // Act (Eylem)
+            var result = await service.GetBarkodsByUrunIdAsync(urunId);
+
+            // Assert (Doğrulama)
+            // Sonucun null olmadığını kontrol ederiz.
+            Assert.NotNull(result);
+
+            // Dönen listenin eleman sayısının 2 olduğunu doğrularız.
+            Assert.Equal(2, result.Count());
+
+            // Dönen listenin tüm elemanlarının UrunId'sinin 1 olduğunu doğrularız.
+            Assert.True(result.All(b => b.UrunId == urunId));
+
+            // GetAllAsync metodunun repository'den tam olarak bir kez çağrıldığını doğrularız.
+            mockRepo.Verify(r => r.GetAllAsync(), Times.Once);
+        }
+
+        [Fact]
+        public async Task GetBarkodsByUrunIdAsync_ShouldReturnEmptyList_WhenUrunIdDoesNotExist()
+        {
+            // Arrange (Hazırlık)
+            var urunId = 99; // Var olmayan bir UrunId
+
+            // Test için sahte bir barkod listesi oluşturuyoruz.
+            var allBarkods = new List<Barkod>
+            {
+                new Barkod { Id = 1, UrunId = 1, Kod = "111" },
+                new Barkod { Id = 2, UrunId = 2, Kod = "222" }
+            };
+
+            var mockRepo = new Mock<IBarkodRepository>();
+
+            // Mock repository'nin GetAllAsync metodu çağrıldığında, yukarıdaki tüm listeyi dönmesini sağlıyoruz.
+            mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(allBarkods);
+
+            var service = new BarkodService(mockRepo.Object);
+
+            // Act (Eylem)
+            var result = await service.GetBarkodsByUrunIdAsync(urunId);
+
+            // Assert (Doğrulama)
+            // Sonucun null olmadığını kontrol ederiz.
+            Assert.NotNull(result);
+
+            // Dönen listenin eleman sayısının 0 olduğunu doğrularız.
+            Assert.Empty(result);
+
+            // GetAllAsync metodunun repository'den tam olarak bir kez çağrıldığını doğrularız.
+            mockRepo.Verify(r => r.GetAllAsync(), Times.Once);
+        }
+        [Fact]
+        public async Task BarkodExistsAsync_ShouldReturnTrue_WhenBarkodExists()
+        {
+            // Arrange (Hazırlık)
+            var existingKod = "1234567890123";
+            var allBarkods = new List<Barkod>
+            {
+                new Barkod { Id = 1, Kod = existingKod },
+                new Barkod { Id = 2, Kod = "9876543210987" }
+            };
+
+            var mockRepo = new Mock<IBarkodRepository>();
+
+            // Mock repository'nin GetAllAsync metodu çağrıldığında, içinde mevcut barkodun bulunduğu listeyi dönmesini sağlıyoruz.
+            mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(allBarkods);
+
+            var service = new BarkodService(mockRepo.Object);
+
+            // Act (Eylem)
+            var result = await service.BarkodExistsAsync(existingKod);
+
+            // Assert (Doğrulama)
+            // Sonucun true olduğunu doğrularız.
+            Assert.True(result);
+
+            // GetAllAsync metodunun repository'den bir kez çağrıldığını doğrularız.
+            mockRepo.Verify(r => r.GetAllAsync(), Times.Once);
+        }
+
+        [Fact]
+        public async Task BarkodExistsAsync_ShouldReturnFalse_WhenBarkodDoesNotExist()
+        {
+            // Arrange (Hazırlık)
+            var nonExistingKod = "9999999999999";
+            var allBarkods = new List<Barkod>
+            {
+                new Barkod { Id = 1, Kod = "1234567890123" },
+                new Barkod { Id = 2, Kod = "9876543210987" }
+            };
+
+            var mockRepo = new Mock<IBarkodRepository>();
+
+            // Mock repository'nin GetAllAsync metodu çağrıldığında, aranan barkodun olmadığı listeyi dönmesini sağlıyoruz.
+            mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(allBarkods);
+
+            var service = new BarkodService(mockRepo.Object);
+
+            // Act (Eylem)
+            var result = await service.BarkodExistsAsync(nonExistingKod);
+
+            // Assert (Doğrulama)
+            // Sonucun false olduğunu doğrularız.
+            Assert.False(result);
+
+            // GetAllAsync metodunun repository'den bir kez çağrıldığını doğrularız.
+            mockRepo.Verify(r => r.GetAllAsync(), Times.Once);
         }
     }
 }
