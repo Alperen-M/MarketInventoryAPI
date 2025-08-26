@@ -8,7 +8,6 @@
         public bool AktifMi { get; set; } = true;
         public int CreatedById { get; set; }
         public string UrunBirimi { get; set; }
-
     }
 
     public class BarkodUpdateDto
