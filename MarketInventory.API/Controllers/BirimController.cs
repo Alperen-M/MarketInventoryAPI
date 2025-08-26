@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 public class BirimController : ControllerBase
 {
     private readonly IBirimService _birimService;
-
     public BirimController(IBirimService birimService)
     {
         _birimService = birimService;
