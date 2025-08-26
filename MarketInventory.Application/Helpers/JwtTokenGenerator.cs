@@ -32,11 +32,7 @@ namespace MarketInventory.Infrastructure.Security
                 new Claim(ClaimTypes.Role, user.KullaniciTuru.Ad)
             };
 
-            //var userRoles = await userManager.GetRolesAsync(user);
-            //foreach (var userRole in userRoles)
-            //{
-            //    claims.Add(new Claim(ClaimTypes.Role, userRole));
-            //}
+         
 
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Key));
