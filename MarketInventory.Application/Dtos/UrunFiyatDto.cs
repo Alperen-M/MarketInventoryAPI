@@ -15,6 +15,7 @@ namespace MarketInventory.Application.DTOs.UrunFiyat
         public decimal Fiyat { get; set; }
         public int? UrunId { get; set; }
         public string? UrunAdi { get; set; }
+        
     }
 
     public class CreateUrunFiyatDto
