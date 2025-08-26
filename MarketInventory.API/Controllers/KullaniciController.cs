@@ -12,7 +12,6 @@ namespace MarketInventory.API.Controllers
     public class KullaniciController : ControllerBase
     {
         private readonly IKullaniciService _kullaniciService;
-
         public KullaniciController(IKullaniciService kullaniciService)
         {
             _kullaniciService = kullaniciService;
