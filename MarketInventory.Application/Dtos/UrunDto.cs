@@ -6,6 +6,7 @@
         public string? Tur { get; set; }
         public int BirimId { get; set; }
         public int? CreatedById { get; set; }
+        
     }
 
     public class UrunUpdateDto
