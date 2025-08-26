@@ -10,7 +10,6 @@ namespace MarketInventory.API.Controllers
     public class UrunController : ControllerBase
     {
         private readonly IUrunService _service;
-
         public UrunController(IUrunService service)
         {
             _service = service;
