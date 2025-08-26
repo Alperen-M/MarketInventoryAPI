@@ -11,7 +11,6 @@ namespace MarketInventory.API.Controllers
     public class StokHareketiController : ControllerBase
     {
         private readonly IStokHareketiService _service;
-
         public StokHareketiController(IStokHareketiService service)
         {
             _service = service;
