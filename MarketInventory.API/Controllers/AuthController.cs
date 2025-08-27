@@ -25,8 +25,7 @@ public class AuthController : ControllerBase
         // KRİTİK DÜZELTME: LoginAsync metodunu doğru parametrelerle çağırın
         var kullanici = await _kullaniciService.LoginAsync(loginDto.KullaniciAdi, loginDto.Password);
 
-        // Düzeltme: Şifre kontrolü artık LoginAsync metodunda yapılıyor.
-        // Bu yüzden burada sadece null kontrolü yeterli.
+       
         if (kullanici == null)
         {
             return Unauthorized("Geçersiz kullanıcı adı veya şifre.");
