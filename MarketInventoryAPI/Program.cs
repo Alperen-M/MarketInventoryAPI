@@ -26,35 +26,6 @@ var jwt = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>()!;
 // JWT Auth
 Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
 
-//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-//    .AddJwtBearer(options =>
-//    {
-//        options.TokenValidationParameters = new TokenValidationParameters
-//        {
-//            ValidateIssuer = true,
-//            ValidateAudience = true,
-//            ValidateLifetime = true,
-//            ValidateIssuerSigningKey = true,
-
-//            ValidIssuer = jwt.Issuer,
-//            ValidAudience = jwt.Audience,
-//            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt.Key)),
-
-//            RoleClaimType = ClaimTypes.Role,
-//            NameClaimType = ClaimTypes.Name,
-//            ClockSkew = TimeSpan.Zero
-//        };
-
-//        options.Events = new JwtBearerEvents
-//        {
-//            OnAuthenticationFailed = ctx =>
-//            {
-//                Console.WriteLine("JWT auth failed: " + ctx.Exception.Message);
-//                return Task.CompletedTask;
-//            }
-//        };
-//    });
-
 var jwtKey = "bAafd@A7d9#@F4*V!LHZs#ebKQrkE6pad2f3kj34c3dXy@"; // minimum 16 karakter
 var issuer = "MyAPI";
 var audience = "MyAPIUsers";
