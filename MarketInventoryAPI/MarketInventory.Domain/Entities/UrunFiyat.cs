@@ -15,5 +15,6 @@ public class UrunFiyat
     public string? CreatedBy { get; set; }
 
     public int? UrunId { get; set; }
+    
     public Urun? Urun { get; set; }
 }
