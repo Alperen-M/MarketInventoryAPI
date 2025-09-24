@@ -15,6 +15,7 @@ public class Urun
     public DateTime? SilinmeTarihi { get; set; }
 
     public int BirimId { get; set; }
+    
     public Birim? Birim { get; set; }
 
     public string? CreatedBy { get; set; }
