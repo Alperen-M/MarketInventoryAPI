@@ -3,6 +3,7 @@
 public class StokHareketi
 {
     public int? UrunId { get; set; }
+    
     public Urun? Urun { get; set; }
 
     public int Id { get; set; }
@@ -16,6 +17,7 @@ public class StokHareketi
     public string HareketTuru { get; set; } = string.Empty;
 
     public int BirimId { get; set; }
+    
     public Birim? Birim { get; set; }
 
     public decimal Miktar { get; set; }
