@@ -17,5 +17,6 @@ public class Kullanici
     public DateTime? SilinmeTarihi { get; set; }
 
     public int KullaniciTuruId { get; set; }
+    
     public KullaniciTuru? KullaniciTuru { get; set; }
 }
