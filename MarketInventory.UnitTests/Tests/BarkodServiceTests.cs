@@ -41,10 +41,9 @@ namespace MarketInventory.Tests
 
                
                 mockRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(barkod);
-
-              
+                
                 var service = new BarkodService(mockRepo.Object);
-
+                
                 // Act 
                 var result = await service.GetByIdAsync(1);
 
