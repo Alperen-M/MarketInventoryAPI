@@ -56,7 +56,6 @@ namespace MarketInventory.Tests
 
             var mockContext = new Mock<MarketDbContext>(new DbContextOptions<MarketDbContext>());
             mockContext.Setup(c => c.Urunler).ReturnsDbSet(urunler);
-
             var service = new UrunService(mockContext.Object);
 
             // Act
