@@ -81,7 +81,6 @@ namespace MarketInventory.Tests
                 new Kullanici { Id = 1, KullaniciAdi = "test@example.com" },
                 new Kullanici { Id = 2, KullaniciAdi = "other@example.com" }
             };
-
             // GetAllAsync çağrısını mockluyoruz.
             _mockRepository.Setup(r => r.GetAllAsync()).ReturnsAsync(allKullanicilar);
 
