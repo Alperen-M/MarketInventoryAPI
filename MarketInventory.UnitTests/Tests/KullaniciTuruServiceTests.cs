@@ -18,7 +18,6 @@ namespace MarketInventory.UnitTests.Tests
         {
             _mockRepository = new Mock<IGenericRepository<KullaniciTuru>>();
             _mockContext = new Mock<MarketDbContext>(new DbContextOptions<MarketDbContext>());
-
             _kullaniciTuruService = new KullaniciTuruService(_mockRepository.Object, _mockContext.Object);
         }
         [Fact]
